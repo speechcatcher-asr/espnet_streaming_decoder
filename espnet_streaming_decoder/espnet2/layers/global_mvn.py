@@ -5,9 +5,9 @@ import numpy as np
 import torch
 from typeguard import check_argument_types
 
-from espnet2.layers.abs_normalize import AbsNormalize
-from espnet2.layers.inversible_interface import InversibleInterface
-from espnet.nets.pytorch_backend.nets_utils import make_pad_mask
+from espnet_streaming_decoder.espnet2.layers.abs_normalize import AbsNormalize
+from espnet_streaming_decoder.espnet2.layers.inversible_interface import InversibleInterface
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.nets_utils import make_pad_mask
 
 
 class GlobalMVN(AbsNormalize, InversibleInterface):

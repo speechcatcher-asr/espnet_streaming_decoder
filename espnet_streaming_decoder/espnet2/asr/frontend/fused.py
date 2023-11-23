@@ -4,9 +4,9 @@ import numpy as np
 import torch
 from typeguard import check_argument_types
 
-from espnet2.asr.frontend.abs_frontend import AbsFrontend
-from espnet2.asr.frontend.default import DefaultFrontend
-from espnet2.asr.frontend.s3prl import S3prlFrontend
+from espnet_streaming_decoder.espnet2.asr.frontend.abs_frontend import AbsFrontend
+from espnet_streaming_decoder.espnet2.asr.frontend.default import DefaultFrontend
+from espnet_streaming_decoder.espnet2.asr.frontend.s3prl import S3prlFrontend
 
 
 class FusedFrontends(AbsFrontend):

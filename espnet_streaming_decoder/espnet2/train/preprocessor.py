@@ -11,10 +11,10 @@ import scipy.signal
 import soundfile
 from typeguard import check_argument_types, check_return_type
 
-from espnet2.text.build_tokenizer import build_tokenizer
-from espnet2.text.cleaner import TextCleaner
-from espnet2.text.token_id_converter import TokenIDConverter
-from espnet2.text.whisper_token_id_converter import OpenAIWhisperTokenIDConverter
+from espnet_streaming_decoder.espnet2.text.build_tokenizer import build_tokenizer
+from espnet_streaming_decoder.espnet2.text.cleaner import TextCleaner
+from espnet_streaming_decoder.espnet2.text.token_id_converter import TokenIDConverter
+from espnet_streaming_decoder.espnet2.text.whisper_token_id_converter import OpenAIWhisperTokenIDConverter
 
 
 class AbsPreprocessor(ABC):

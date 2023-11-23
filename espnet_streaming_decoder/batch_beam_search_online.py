@@ -8,10 +8,10 @@ from typing import Tuple  # noqa: H301
 
 import torch
 
-from espnet.nets.batch_beam_search import BatchBeamSearch  # noqa: H301
-from espnet.nets.batch_beam_search import BatchHypothesis  # noqa: H301
-from espnet.nets.beam_search import Hypothesis
-from espnet.nets.e2e_asr_common import end_detect
+from espnet_streaming_decoder.espnet.nets.batch_beam_search import BatchBeamSearch  # noqa: H301
+from espnet_streaming_decoder.espnet.nets.batch_beam_search import BatchHypothesis  # noqa: H301
+from espnet_streaming_decoder.espnet.nets.beam_search import Hypothesis
+from espnet_streaming_decoder.espnet.nets.e2e_asr_common import end_detect
 
 
 class BatchBeamSearchOnline(BatchBeamSearch):

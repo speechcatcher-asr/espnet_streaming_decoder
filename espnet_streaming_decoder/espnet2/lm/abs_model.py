@@ -3,7 +3,7 @@ from typing import Tuple
 
 import torch
 
-from espnet.nets.scorer_interface import BatchScorerInterface
+from espnet_streaming_decoder.espnet.nets.scorer_interface import BatchScorerInterface
 
 
 class AbsLM(torch.nn.Module, BatchScorerInterface, ABC):
@@ -13,7 +13,7 @@ class AbsLM(torch.nn.Module, BatchScorerInterface, ABC):
     We uses delegate pattern here:
     The instance of this class should be passed to "LanguageModel"
 
-    >>> from espnet2.lm.abs_model import AbsLM
+    >>> from espnet_streaming_decoder.espnet2.lm.abs_model import AbsLM
     >>> lm = AbsLM()
     >>> model = LanguageESPnetModel(lm=lm)
 

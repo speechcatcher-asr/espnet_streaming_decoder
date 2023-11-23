@@ -20,27 +20,27 @@ from packaging.version import parse as V
 from torch.utils.data import DataLoader
 from typeguard import check_argument_types, check_return_type
 
-from espnet import __version__
-from espnet2.iterators.abs_iter_factory import AbsIterFactory
-from espnet2.iterators.chunk_iter_factory import ChunkIterFactory
-from espnet2.iterators.multiple_iter_factory import MultipleIterFactory
-from espnet2.iterators.sequence_iter_factory import SequenceIterFactory
-from espnet2.main_funcs.collect_stats import collect_stats
-from espnet2.optimizers.optim_groups import configure_optimizer
-from espnet2.optimizers.sgd import SGD
-from espnet2.samplers.build_batch_sampler import BATCH_TYPES, build_batch_sampler
-from espnet2.samplers.unsorted_batch_sampler import UnsortedBatchSampler
-from espnet2.schedulers.noam_lr import NoamLR
-from espnet2.schedulers.warmup_lr import WarmupLR
-from espnet2.schedulers.warmup_step_lr import WarmupStepLR
-from espnet2.torch_utils.load_pretrained_model import load_pretrained_model
-from espnet2.torch_utils.model_summary import model_summary
-from espnet2.torch_utils.pytorch_version import pytorch_cudnn_version
-from espnet2.torch_utils.set_all_random_seed import set_all_random_seed
-from espnet2.train.abs_espnet_model import AbsESPnetModel
-from espnet2.train.class_choices import ClassChoices
-from espnet2.train.dataset import DATA_TYPES, AbsDataset, ESPnetDataset
-from espnet2.train.distributed_utils import (
+from espnet_streaming_decoder.espnet import __version__
+from espnet_streaming_decoder.espnet2.iterators.abs_iter_factory import AbsIterFactory
+from espnet_streaming_decoder.espnet2.iterators.chunk_iter_factory import ChunkIterFactory
+from espnet_streaming_decoder.espnet2.iterators.multiple_iter_factory import MultipleIterFactory
+from espnet_streaming_decoder.espnet2.iterators.sequence_iter_factory import SequenceIterFactory
+from espnet_streaming_decoder.espnet2.main_funcs.collect_stats import collect_stats
+from espnet_streaming_decoder.espnet2.optimizers.optim_groups import configure_optimizer
+from espnet_streaming_decoder.espnet2.optimizers.sgd import SGD
+from espnet_streaming_decoder.espnet2.samplers.build_batch_sampler import BATCH_TYPES, build_batch_sampler
+from espnet_streaming_decoder.espnet2.samplers.unsorted_batch_sampler import UnsortedBatchSampler
+from espnet_streaming_decoder.espnet2.schedulers.noam_lr import NoamLR
+from espnet_streaming_decoder.espnet2.schedulers.warmup_lr import WarmupLR
+from espnet_streaming_decoder.espnet2.schedulers.warmup_step_lr import WarmupStepLR
+from espnet_streaming_decoder.espnet2.torch_utils.load_pretrained_model import load_pretrained_model
+from espnet_streaming_decoder.espnet2.torch_utils.model_summary import model_summary
+from espnet_streaming_decoder.espnet2.torch_utils.pytorch_version import pytorch_cudnn_version
+from espnet_streaming_decoder.espnet2.torch_utils.set_all_random_seed import set_all_random_seed
+from espnet_streaming_decoder.espnet2.train.abs_espnet_model import AbsESPnetModel
+from espnet_streaming_decoder.espnet2.train.class_choices import ClassChoices
+from espnet_streaming_decoder.espnet2.train.dataset import DATA_TYPES, AbsDataset, ESPnetDataset
+from espnet_streaming_decoder.espnet2.train.distributed_utils import (
     DistributedOption,
     free_port,
     get_master_port,
@@ -48,13 +48,13 @@ from espnet2.train.distributed_utils import (
     get_num_nodes,
     resolve_distributed_mode,
 )
-from espnet2.train.iterable_dataset import IterableESPnetDataset
-#from espnet2.train.trainer import Trainer
-from espnet2.utils import config_argparse
-from espnet2.utils.build_dataclass import build_dataclass
-from espnet2.utils.get_default_kwargs import get_default_kwargs
-from espnet2.utils.nested_dict_action import NestedDictAction
-from espnet2.utils.types import (
+from espnet_streaming_decoder.espnet2.train.iterable_dataset import IterableESPnetDataset
+#from espnet_streaming_decoder.espnet2.train.trainer import Trainer
+from espnet_streaming_decoder.espnet2.utils import config_argparse
+from espnet_streaming_decoder.espnet2.utils.build_dataclass import build_dataclass
+from espnet_streaming_decoder.espnet2.utils.get_default_kwargs import get_default_kwargs
+from espnet_streaming_decoder.espnet2.utils.nested_dict_action import NestedDictAction
+from espnet_streaming_decoder.espnet2.utils.types import (
     humanfriendly_parse_size_or_none,
     int_or_none,
     str2bool,
@@ -62,8 +62,8 @@ from espnet2.utils.types import (
     str_or_int,
     str_or_none,
 )
-from espnet2.utils.yaml_no_alias_safe_dump import yaml_no_alias_safe_dump
-from espnet.utils.cli_utils import get_commandline_args
+from espnet_streaming_decoder.espnet2.utils.yaml_no_alias_safe_dump import yaml_no_alias_safe_dump
+from espnet_streaming_decoder.espnet.utils.cli_utils import get_commandline_args
 
 try:
     import wandb
@@ -221,7 +221,7 @@ class AbsTask(ABC):
         >>> cls.check_task_requirements()
         If your model is defined as following,
 
-        >>> from espnet2.train.abs_espnet_model import AbsESPnetModel
+        >>> from espnet_streaming_decoder.espnet2.train.abs_espnet_model import AbsESPnetModel
         >>> class Model(AbsESPnetModel):
         ...     def forward(self, input, output, opt=None):  pass
 
@@ -242,7 +242,7 @@ class AbsTask(ABC):
         >>> cls.check_task_requirements()
         If your model is defined as follows,
 
-        >>> from espnet2.train.abs_espnet_model import AbsESPnetModel
+        >>> from espnet_streaming_decoder.espnet2.train.abs_espnet_model import AbsESPnetModel
         >>> class Model(AbsESPnetModel):
         ...     def forward(self, input, output, opt=None):  pass
 

@@ -278,7 +278,7 @@ def pack(
     except ImportError:
         pass
     try:
-        import espnet
+        import espnet_streaming_decoder.espnet
 
         meta_objs.update(espnet=espnet.__version__)
     except ImportError:

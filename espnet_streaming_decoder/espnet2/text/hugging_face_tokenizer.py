@@ -3,7 +3,7 @@ from typing import Iterable, List, Union
 
 from typeguard import check_argument_types
 
-from espnet2.text.abs_tokenizer import AbsTokenizer
+from espnet_streaming_decoder.espnet2.text.abs_tokenizer import AbsTokenizer
 
 try:
     from transformers import AutoTokenizer

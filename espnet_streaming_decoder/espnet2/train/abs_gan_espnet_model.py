@@ -8,7 +8,7 @@ from typing import Dict, Union
 
 import torch
 
-from espnet2.train.abs_espnet_model import AbsESPnetModel
+from espnet_streaming_decoder.espnet2.train.abs_espnet_model import AbsESPnetModel
 
 
 class AbsGANESPnetModel(AbsESPnetModel, torch.nn.Module, ABC):
@@ -21,7 +21,7 @@ class AbsGANESPnetModel(AbsESPnetModel, torch.nn.Module, ABC):
     "optim_idx" for generator must be 0 and that for discriminator must be 1.
 
     Example:
-        >>> from espnet2.tasks.abs_task import AbsTask
+        >>> from espnet_streaming_decoder.espnet2.tasks.abs_task import AbsTask
         >>> class YourESPnetModel(AbsGANESPnetModel):
         ...     def forward(self, input, input_lengths, forward_generator=True):
         ...         ...

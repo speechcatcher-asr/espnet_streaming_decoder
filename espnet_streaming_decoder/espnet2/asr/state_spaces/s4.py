@@ -17,7 +17,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from einops import rearrange, repeat
 
-from espnet2.asr.state_spaces.components import Activation, DropoutNd, LinearActivation
+from espnet_streaming_decoder.espnet2.asr.state_spaces.components import Activation, DropoutNd, LinearActivation
 
 contract = oe.contract
 contract_expression = oe.contract_expression

@@ -10,8 +10,8 @@
 import torch
 import torch.nn as nn
 
-from espnet2.enh.layers import dprnn
-from espnet2.enh.layers.fasnet import BF_module, FaSNet_base
+from espnet_streaming_decoder.espnet2.enh.layers import dprnn
+from espnet_streaming_decoder.espnet2.enh.layers.fasnet import BF_module, FaSNet_base
 
 
 # implicit FaSNet (iFaSNet)

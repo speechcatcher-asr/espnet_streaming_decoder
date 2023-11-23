@@ -2,7 +2,7 @@ from typing import Iterable, List
 
 from typeguard import check_argument_types
 
-from espnet2.text.abs_tokenizer import AbsTokenizer
+from espnet_streaming_decoder.espnet2.text.abs_tokenizer import AbsTokenizer
 
 
 class OpenAIWhisperTokenizer(AbsTokenizer):

@@ -9,7 +9,7 @@ from typing import Tuple
 import torch
 from typeguard import check_argument_types
 
-from espnet2.asr.preencoder.abs_preencoder import AbsPreEncoder
+from espnet_streaming_decoder.espnet2.asr.preencoder.abs_preencoder import AbsPreEncoder
 
 
 class LinearProjection(AbsPreEncoder):

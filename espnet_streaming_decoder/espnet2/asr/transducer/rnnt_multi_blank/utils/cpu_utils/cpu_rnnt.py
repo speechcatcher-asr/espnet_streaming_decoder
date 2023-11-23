@@ -34,7 +34,7 @@ import numba
 import torch
 from torch.autograd import Function
 
-from espnet2.asr.transducer.rnnt_multi_blank.utils import global_constants
+from espnet_streaming_decoder.espnet2.asr.transducer.rnnt_multi_blank.utils import global_constants
 
 
 def log_sum_exp(a: torch.Tensor, b: torch.Tensor):

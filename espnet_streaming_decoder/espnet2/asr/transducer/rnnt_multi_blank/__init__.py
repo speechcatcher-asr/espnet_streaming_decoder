@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from espnet2.asr.transducer.rnnt_multi_blank.rnnt_multi_blank import (
+from espnet_streaming_decoder.espnet2.asr.transducer.rnnt_multi_blank.rnnt_multi_blank import (
     MultiblankRNNTLossNumba,
 )
 

@@ -12,28 +12,28 @@ import numpy as np
 import torch
 from typeguard import check_argument_types, check_return_type
 
-from espnet2.asr.encoder.contextual_block_conformer_encoder import (  # noqa: H301
+from espnet_streaming_decoder.espnet2.asr.encoder.contextual_block_conformer_encoder import (  # noqa: H301
     ContextualBlockConformerEncoder,
 )
-from espnet2.asr.encoder.contextual_block_transformer_encoder import (  # noqa: H301
+from espnet_streaming_decoder.espnet2.asr.encoder.contextual_block_transformer_encoder import (  # noqa: H301
     ContextualBlockTransformerEncoder,
 )
-from espnet2.fileio.datadir_writer import DatadirWriter
-from espnet2.tasks.asr import ASRTask
-from espnet2.tasks.lm import LMTask
-from espnet2.text.build_tokenizer import build_tokenizer
-from espnet2.text.token_id_converter import TokenIDConverter
-from espnet2.torch_utils.device_funcs import to_device
-from espnet2.torch_utils.set_all_random_seed import set_all_random_seed
-from espnet2.utils import config_argparse
-from espnet2.utils.types import str2bool, str2triple_str, str_or_none
-from espnet.nets.batch_beam_search_online import BatchBeamSearchOnline
-from espnet.nets.beam_search import Hypothesis
-from espnet.nets.pytorch_backend.transformer.subsampling import TooShortUttError
-from espnet.nets.scorer_interface import BatchScorerInterface
-from espnet.nets.scorers.ctc import CTCPrefixScorer
-from espnet.nets.scorers.length_bonus import LengthBonus
-from espnet.utils.cli_utils import get_commandline_args
+from espnet_streaming_decoder.espnet2.fileio.datadir_writer import DatadirWriter
+from espnet_streaming_decoder.espnet2.tasks.asr import ASRTask
+from espnet_streaming_decoder.espnet2.tasks.lm import LMTask
+from espnet_streaming_decoder.espnet2.text.build_tokenizer import build_tokenizer
+from espnet_streaming_decoder.espnet2.text.token_id_converter import TokenIDConverter
+from espnet_streaming_decoder.espnet2.torch_utils.device_funcs import to_device
+from espnet_streaming_decoder.espnet2.torch_utils.set_all_random_seed import set_all_random_seed
+from espnet_streaming_decoder.espnet2.utils import config_argparse
+from espnet_streaming_decoder.espnet2.utils.types import str2bool, str2triple_str, str_or_none
+from espnet_streaming_decoder.espnet.nets.batch_beam_search_online import BatchBeamSearchOnline
+from espnet_streaming_decoder.espnet.nets.beam_search import Hypothesis
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.transformer.subsampling import TooShortUttError
+from espnet_streaming_decoder.espnet.nets.scorer_interface import BatchScorerInterface
+from espnet_streaming_decoder.espnet.nets.scorers.ctc import CTCPrefixScorer
+from espnet_streaming_decoder.espnet.nets.scorers.length_bonus import LengthBonus
+from espnet_streaming_decoder.espnet.utils.cli_utils import get_commandline_args
 
 
 class Speech2TextStreaming:

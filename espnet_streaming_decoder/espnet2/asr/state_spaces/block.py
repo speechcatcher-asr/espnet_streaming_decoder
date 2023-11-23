@@ -13,16 +13,16 @@ from functools import partial
 
 from torch import nn
 
-import espnet2.asr.state_spaces.utils as utils
-from espnet2.asr.state_spaces import registry
-from espnet2.asr.state_spaces.base import SequenceModule
-from espnet2.asr.state_spaces.components import (
+import espnet_streaming_decoder.espnet2.asr.state_spaces.utils as utils
+from espnet_streaming_decoder.espnet2.asr.state_spaces import registry
+from espnet_streaming_decoder.espnet2.asr.state_spaces.base import SequenceModule
+from espnet_streaming_decoder.espnet2.asr.state_spaces.components import (
     DropoutNd,
     Normalization,
     StochasticDepth,
 )
-from espnet2.asr.state_spaces.pool import registry as pool_registry
-from espnet2.asr.state_spaces.residual import registry as residual_registry
+from espnet_streaming_decoder.espnet2.asr.state_spaces.pool import registry as pool_registry
+from espnet_streaming_decoder.espnet2.asr.state_spaces.residual import registry as residual_registry
 
 
 class SequenceResidualBlock(SequenceModule):

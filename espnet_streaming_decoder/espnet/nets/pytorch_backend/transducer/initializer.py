@@ -5,7 +5,7 @@ from argparse import Namespace
 
 import torch
 
-from espnet.nets.pytorch_backend.initialization import set_forget_bias_to_one
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.initialization import set_forget_bias_to_one
 
 
 def initializer(model: torch.nn.Module, args: Namespace):

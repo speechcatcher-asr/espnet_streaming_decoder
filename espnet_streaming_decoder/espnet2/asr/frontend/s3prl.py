@@ -6,9 +6,9 @@ import humanfriendly
 import torch
 from typeguard import check_argument_types
 
-from espnet2.asr.frontend.abs_frontend import AbsFrontend
-from espnet2.utils.get_default_kwargs import get_default_kwargs
-from espnet.nets.pytorch_backend.frontends.frontend import Frontend
+from espnet_streaming_decoder.espnet2.asr.frontend.abs_frontend import AbsFrontend
+from espnet_streaming_decoder.espnet2.utils.get_default_kwargs import get_default_kwargs
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.frontends.frontend import Frontend
 
 
 class S3prlFrontend(AbsFrontend):

@@ -6,8 +6,8 @@
 import torch
 import torch.nn as nn
 
-from espnet2.enh.layers.dprnn import SingleRNN, merge_feature, split_feature
-from espnet2.enh.layers.tcn import choose_norm
+from espnet_streaming_decoder.espnet2.enh.layers.dprnn import SingleRNN, merge_feature, split_feature
+from espnet_streaming_decoder.espnet2.enh.layers.tcn import choose_norm
 
 
 class MemLSTM(nn.Module):

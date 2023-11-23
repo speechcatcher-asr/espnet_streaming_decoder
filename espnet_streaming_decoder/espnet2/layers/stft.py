@@ -7,9 +7,9 @@ from packaging.version import parse as V
 from torch_complex.tensor import ComplexTensor
 from typeguard import check_argument_types
 
-from espnet2.enh.layers.complex_utils import is_complex
-from espnet2.layers.inversible_interface import InversibleInterface
-from espnet.nets.pytorch_backend.nets_utils import make_pad_mask
+from espnet_streaming_decoder.espnet2.enh.layers.complex_utils import is_complex
+from espnet_streaming_decoder.espnet2.layers.inversible_interface import InversibleInterface
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.nets_utils import make_pad_mask
 
 is_torch_1_10_plus = V(torch.__version__) >= V("1.10.0")
 

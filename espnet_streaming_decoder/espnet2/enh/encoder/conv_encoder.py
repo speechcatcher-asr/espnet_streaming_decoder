@@ -1,6 +1,6 @@
 import torch
 
-from espnet2.enh.encoder.abs_encoder import AbsEncoder
+from espnet_streaming_decoder.espnet2.enh.encoder.abs_encoder import AbsEncoder
 
 
 class ConvEncoder(AbsEncoder):

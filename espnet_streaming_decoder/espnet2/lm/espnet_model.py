@@ -4,10 +4,10 @@ import torch
 import torch.nn.functional as F
 from typeguard import check_argument_types
 
-from espnet2.lm.abs_model import AbsLM
-from espnet2.torch_utils.device_funcs import force_gatherable
-from espnet2.train.abs_espnet_model import AbsESPnetModel
-from espnet.nets.pytorch_backend.nets_utils import make_pad_mask
+from espnet_streaming_decoder.espnet2.lm.abs_model import AbsLM
+from espnet_streaming_decoder.espnet2.torch_utils.device_funcs import force_gatherable
+from espnet_streaming_decoder.espnet2.train.abs_espnet_model import AbsESPnetModel
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.nets_utils import make_pad_mask
 
 
 class ESPnetLanguageModel(AbsESPnetModel):

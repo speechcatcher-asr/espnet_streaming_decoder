@@ -8,8 +8,8 @@ import torch
 from packaging.version import parse as V
 from torch_complex.tensor import ComplexTensor
 
-from espnet2.enh.loss.criterions.abs_loss import AbsEnhLoss
-from espnet2.layers.stft import Stft
+from espnet_streaming_decoder.espnet2.enh.loss.criterions.abs_loss import AbsEnhLoss
+from espnet_streaming_decoder.espnet2.layers.stft import Stft
 
 is_torch_1_9_plus = V(torch.__version__) >= V("1.9.0")
 

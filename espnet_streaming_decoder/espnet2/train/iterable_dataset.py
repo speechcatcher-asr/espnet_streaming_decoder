@@ -11,7 +11,7 @@ import torch
 from torch.utils.data.dataset import IterableDataset
 from typeguard import check_argument_types
 
-from espnet2.train.dataset import ESPnetDataset
+from espnet_streaming_decoder.espnet2.train.dataset import ESPnetDataset
 
 
 def load_kaldi(input):

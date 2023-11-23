@@ -4,10 +4,10 @@ from typing import Any, List, Tuple
 import torch
 from typeguard import check_argument_types
 
-from espnet2.asr.decoder.abs_decoder import AbsDecoder
-from espnet2.asr.state_spaces.model import SequenceModel
-from espnet.nets.pytorch_backend.nets_utils import make_pad_mask
-from espnet.nets.scorer_interface import BatchScorerInterface
+from espnet_streaming_decoder.espnet2.asr.decoder.abs_decoder import AbsDecoder
+from espnet_streaming_decoder.espnet2.asr.state_spaces.model import SequenceModel
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.nets_utils import make_pad_mask
+from espnet_streaming_decoder.espnet.nets.scorer_interface import BatchScorerInterface
 
 
 class S4Decoder(AbsDecoder, BatchScorerInterface):

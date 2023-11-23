@@ -2,8 +2,8 @@ from typing import Iterator, List, Tuple, Union
 
 from typeguard import check_argument_types
 
-from espnet2.fileio.read_text import load_num_sequence_text
-from espnet2.samplers.abs_sampler import AbsSampler
+from espnet_streaming_decoder.espnet2.fileio.read_text import load_num_sequence_text
+from espnet_streaming_decoder.espnet2.samplers.abs_sampler import AbsSampler
 
 
 class LengthBatchSampler(AbsSampler):

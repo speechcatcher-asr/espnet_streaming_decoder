@@ -6,7 +6,7 @@ from typing import Collection, Optional, Sequence, Union
 import torch
 from typeguard import check_argument_types
 
-from espnet2.train.reporter import Reporter
+from espnet_streaming_decoder.espnet2.train.reporter import Reporter
 
 
 @torch.no_grad()

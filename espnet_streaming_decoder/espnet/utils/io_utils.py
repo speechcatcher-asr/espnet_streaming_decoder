@@ -8,7 +8,7 @@ import kaldiio
 import numpy as np
 import soundfile
 
-from espnet.transform.transformation import Transformation
+from espnet_streaming_decoder.espnet.transform.transformation import Transformation
 
 
 class LoadInputsAndTargets(object):

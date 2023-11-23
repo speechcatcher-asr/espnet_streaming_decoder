@@ -5,8 +5,8 @@ import torch
 from torch.nn import functional as F
 from torch_complex.tensor import ComplexTensor
 
-from espnet.nets.pytorch_backend.nets_utils import make_pad_mask
-from espnet.nets.pytorch_backend.rnn.encoders import RNN, RNNP
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.nets_utils import make_pad_mask
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.rnn.encoders import RNN, RNNP
 
 
 class MaskEstimator(torch.nn.Module):

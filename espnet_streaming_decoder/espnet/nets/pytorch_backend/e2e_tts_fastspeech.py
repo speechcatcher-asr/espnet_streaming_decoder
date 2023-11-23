@@ -8,27 +8,27 @@ import logging
 import torch
 import torch.nn.functional as F
 
-from espnet.asr.asr_utils import get_model_conf, torch_load
-from espnet.nets.pytorch_backend.fastspeech.duration_calculator import (  # noqa: H301
+from espnet_streaming_decoder.espnet.asr.asr_utils import get_model_conf, torch_load
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.fastspeech.duration_calculator import (  # noqa: H301
     DurationCalculator,
 )
-from espnet.nets.pytorch_backend.fastspeech.duration_predictor import (  # noqa: H301
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.fastspeech.duration_predictor import (  # noqa: H301
     DurationPredictor,
     DurationPredictorLoss,
 )
-from espnet.nets.pytorch_backend.fastspeech.length_regulator import LengthRegulator
-from espnet.nets.pytorch_backend.nets_utils import make_non_pad_mask, make_pad_mask
-from espnet.nets.pytorch_backend.tacotron2.decoder import Postnet
-from espnet.nets.pytorch_backend.transformer.attention import MultiHeadedAttention
-from espnet.nets.pytorch_backend.transformer.embedding import (
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.fastspeech.length_regulator import LengthRegulator
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.nets_utils import make_non_pad_mask, make_pad_mask
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.tacotron2.decoder import Postnet
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.transformer.attention import MultiHeadedAttention
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.transformer.embedding import (
     PositionalEncoding,
     ScaledPositionalEncoding,
 )
-from espnet.nets.pytorch_backend.transformer.encoder import Encoder
-from espnet.nets.pytorch_backend.transformer.initializer import initialize
-from espnet.nets.tts_interface import TTSInterface
-from espnet.utils.cli_utils import strtobool
-from espnet.utils.fill_missing_args import fill_missing_args
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.transformer.encoder import Encoder
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.transformer.initializer import initialize
+from espnet_streaming_decoder.espnet.nets.tts_interface import TTSInterface
+from espnet_streaming_decoder.espnet.utils.cli_utils import strtobool
+from espnet_streaming_decoder.espnet.utils.fill_missing_args import fill_missing_args
 
 
 class FeedForwardTransformerLoss(torch.nn.Module):
@@ -829,7 +829,7 @@ class FeedForwardTransformer(TTSInterface, torch.nn.Module):
         assert args.reduction_factor == self.reduction_factor
 
         # load teacher model
-        from espnet.utils.dynamic_import import dynamic_import
+        from espnet_streaming_decoder.espnet.utils.dynamic_import import dynamic_import
 
         model_class = dynamic_import(args.model_module)
         model = model_class(idim, odim, args)
@@ -874,7 +874,7 @@ class FeedForwardTransformer(TTSInterface, torch.nn.Module):
     def attention_plot_class(self):
         """Return plot class for attention weight plot."""
         # Lazy import to avoid chainer dependency
-        from espnet.nets.pytorch_backend.e2e_tts_transformer import TTSPlot
+        from espnet_streaming_decoder.espnet.nets.pytorch_backend.e2e_tts_transformer import TTSPlot
 
         return TTSPlot
 

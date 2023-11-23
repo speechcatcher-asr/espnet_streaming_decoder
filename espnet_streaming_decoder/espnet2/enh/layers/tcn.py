@@ -12,7 +12,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from espnet2.enh.layers.adapt_layers import make_adapt_layer
+from espnet_streaming_decoder.espnet2.enh.layers.adapt_layers import make_adapt_layer
 
 EPS = torch.finfo(torch.get_default_dtype()).eps
 

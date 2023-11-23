@@ -1,9 +1,9 @@
 """ASR Interface module."""
 import argparse
 
-from espnet.bin.asr_train import get_parser
-from espnet.utils.dynamic_import import dynamic_import
-from espnet.utils.fill_missing_args import fill_missing_args
+from espnet_streaming_decoder.espnet.bin.asr_train import get_parser
+from espnet_streaming_decoder.espnet.utils.dynamic_import import dynamic_import
+from espnet_streaming_decoder.espnet.utils.fill_missing_args import fill_missing_args
 
 
 class ASRInterface:
@@ -101,14 +101,14 @@ class ASRInterface:
     @property
     def attention_plot_class(self):
         """Get attention plot class."""
-        from espnet.asr.asr_utils import PlotAttentionReport
+        from espnet_streaming_decoder.espnet.asr.asr_utils import PlotAttentionReport
 
         return PlotAttentionReport
 
     @property
     def ctc_plot_class(self):
         """Get CTC plot class."""
-        from espnet.asr.asr_utils import PlotCTCReport
+        from espnet_streaming_decoder.espnet.asr.asr_utils import PlotCTCReport
 
         return PlotCTCReport
 

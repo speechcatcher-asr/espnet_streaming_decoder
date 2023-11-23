@@ -1,8 +1,8 @@
 import torch
 
-from espnet2.enh.loss.criterions.abs_loss import AbsEnhLoss
-from espnet2.enh.loss.wrappers.abs_wrapper import AbsLossWrapper
-from espnet2.enh.loss.wrappers.pit_solver import PITSolver
+from espnet_streaming_decoder.espnet2.enh.loss.criterions.abs_loss import AbsEnhLoss
+from espnet_streaming_decoder.espnet2.enh.loss.wrappers.abs_wrapper import AbsLossWrapper
+from espnet_streaming_decoder.espnet2.enh.loss.wrappers.pit_solver import PITSolver
 
 
 class MultiLayerPITSolver(AbsLossWrapper):

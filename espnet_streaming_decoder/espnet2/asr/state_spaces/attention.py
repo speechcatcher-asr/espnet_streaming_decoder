@@ -6,7 +6,7 @@ import numpy
 import torch
 from torch import nn
 
-from espnet2.asr.state_spaces.base import SequenceModule
+from espnet_streaming_decoder.espnet2.asr.state_spaces.base import SequenceModule
 
 
 class MultiHeadedAttention(SequenceModule):

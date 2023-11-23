@@ -1,6 +1,6 @@
 from chainer.training.extensions import Evaluator
 
-from espnet.utils.training.tensorboard_logger import TensorboardLogger
+from espnet_streaming_decoder.espnet.utils.training.tensorboard_logger import TensorboardLogger
 
 
 class BaseEvaluator(Evaluator):

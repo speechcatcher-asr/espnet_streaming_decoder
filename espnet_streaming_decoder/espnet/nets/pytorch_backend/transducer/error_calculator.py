@@ -4,10 +4,10 @@ from typing import List, Tuple, Union
 
 import torch
 
-from espnet.nets.beam_search_transducer import BeamSearchTransducer
-from espnet.nets.pytorch_backend.transducer.custom_decoder import CustomDecoder
-from espnet.nets.pytorch_backend.transducer.joint_network import JointNetwork
-from espnet.nets.pytorch_backend.transducer.rnn_decoder import RNNDecoder
+from espnet_streaming_decoder.espnet.nets.beam_search_transducer import BeamSearchTransducer
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.transducer.custom_decoder import CustomDecoder
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.transducer.joint_network import JointNetwork
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.transducer.rnn_decoder import RNNDecoder
 
 
 class ErrorCalculator(object):

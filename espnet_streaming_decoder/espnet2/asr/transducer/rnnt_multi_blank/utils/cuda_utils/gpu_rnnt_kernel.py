@@ -31,7 +31,7 @@ import math
 import torch
 from numba import cuda
 
-from espnet2.asr.transducer.rnnt_multi_blank.utils import rnnt_helper
+from espnet_streaming_decoder.espnet2.asr.transducer.rnnt_multi_blank.utils import rnnt_helper
 
 GPU_RNNT_THREAD_SIZE = 256
 

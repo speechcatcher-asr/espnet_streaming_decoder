@@ -6,7 +6,7 @@ import h5py
 import kaldiio
 import soundfile
 
-from espnet.utils.io_utils import SoundHDF5File
+from espnet_streaming_decoder.espnet.utils.io_utils import SoundHDF5File
 
 
 def file_reader_helper(

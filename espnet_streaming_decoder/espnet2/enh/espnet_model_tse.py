@@ -4,14 +4,14 @@ from typing import Dict, List, OrderedDict, Tuple
 import torch
 from typeguard import check_argument_types
 
-from espnet2.enh.decoder.abs_decoder import AbsDecoder
-from espnet2.enh.encoder.abs_encoder import AbsEncoder
-from espnet2.enh.extractor.abs_extractor import AbsExtractor
-from espnet2.enh.loss.criterions.tf_domain import FrequencyDomainLoss
-from espnet2.enh.loss.criterions.time_domain import TimeDomainLoss
-from espnet2.enh.loss.wrappers.abs_wrapper import AbsLossWrapper
-from espnet2.torch_utils.device_funcs import force_gatherable
-from espnet2.train.abs_espnet_model import AbsESPnetModel
+from espnet_streaming_decoder.espnet2.enh.decoder.abs_decoder import AbsDecoder
+from espnet_streaming_decoder.espnet2.enh.encoder.abs_encoder import AbsEncoder
+from espnet_streaming_decoder.espnet2.enh.extractor.abs_extractor import AbsExtractor
+from espnet_streaming_decoder.espnet2.enh.loss.criterions.tf_domain import FrequencyDomainLoss
+from espnet_streaming_decoder.espnet2.enh.loss.criterions.time_domain import TimeDomainLoss
+from espnet_streaming_decoder.espnet2.enh.loss.wrappers.abs_wrapper import AbsLossWrapper
+from espnet_streaming_decoder.espnet2.torch_utils.device_funcs import force_gatherable
+from espnet_streaming_decoder.espnet2.train.abs_espnet_model import AbsESPnetModel
 
 EPS = torch.finfo(torch.get_default_dtype()).eps
 

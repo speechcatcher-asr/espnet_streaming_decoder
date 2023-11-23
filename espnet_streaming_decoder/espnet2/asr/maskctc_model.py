@@ -8,22 +8,22 @@ import torch
 from packaging.version import parse as V
 from typeguard import check_argument_types
 
-from espnet2.asr.ctc import CTC
-from espnet2.asr.decoder.mlm_decoder import MLMDecoder
-from espnet2.asr.encoder.abs_encoder import AbsEncoder
-from espnet2.asr.espnet_model import ESPnetASRModel
-from espnet2.asr.frontend.abs_frontend import AbsFrontend
-from espnet2.asr.postencoder.abs_postencoder import AbsPostEncoder
-from espnet2.asr.preencoder.abs_preencoder import AbsPreEncoder
-from espnet2.asr.specaug.abs_specaug import AbsSpecAug
-from espnet2.layers.abs_normalize import AbsNormalize
-from espnet2.text.token_id_converter import TokenIDConverter
-from espnet2.torch_utils.device_funcs import force_gatherable
-from espnet.nets.beam_search import Hypothesis
-from espnet.nets.e2e_asr_common import ErrorCalculator
-from espnet.nets.pytorch_backend.maskctc.add_mask_token import mask_uniform
-from espnet.nets.pytorch_backend.nets_utils import th_accuracy
-from espnet.nets.pytorch_backend.transformer.label_smoothing_loss import (  # noqa: H301
+from espnet_streaming_decoder.espnet2.asr.ctc import CTC
+from espnet_streaming_decoder.espnet2.asr.decoder.mlm_decoder import MLMDecoder
+from espnet_streaming_decoder.espnet2.asr.encoder.abs_encoder import AbsEncoder
+from espnet_streaming_decoder.espnet2.asr.espnet_model import ESPnetASRModel
+from espnet_streaming_decoder.espnet2.asr.frontend.abs_frontend import AbsFrontend
+from espnet_streaming_decoder.espnet2.asr.postencoder.abs_postencoder import AbsPostEncoder
+from espnet_streaming_decoder.espnet2.asr.preencoder.abs_preencoder import AbsPreEncoder
+from espnet_streaming_decoder.espnet2.asr.specaug.abs_specaug import AbsSpecAug
+from espnet_streaming_decoder.espnet2.layers.abs_normalize import AbsNormalize
+from espnet_streaming_decoder.espnet2.text.token_id_converter import TokenIDConverter
+from espnet_streaming_decoder.espnet2.torch_utils.device_funcs import force_gatherable
+from espnet_streaming_decoder.espnet.nets.beam_search import Hypothesis
+from espnet_streaming_decoder.espnet.nets.e2e_asr_common import ErrorCalculator
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.maskctc.add_mask_token import mask_uniform
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.nets_utils import th_accuracy
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.transformer.label_smoothing_loss import (  # noqa: H301
     LabelSmoothingLoss,
 )
 

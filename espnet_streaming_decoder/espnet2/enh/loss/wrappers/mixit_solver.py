@@ -4,10 +4,10 @@ from typing import Dict, List, Union
 import torch
 from torch_complex.tensor import ComplexTensor
 
-from espnet2.enh.layers.complex_utils import einsum as complex_einsum
-from espnet2.enh.layers.complex_utils import stack as complex_stack
-from espnet2.enh.loss.criterions.abs_loss import AbsEnhLoss
-from espnet2.enh.loss.wrappers.abs_wrapper import AbsLossWrapper
+from espnet_streaming_decoder.espnet2.enh.layers.complex_utils import einsum as complex_einsum
+from espnet_streaming_decoder.espnet2.enh.layers.complex_utils import stack as complex_stack
+from espnet_streaming_decoder.espnet2.enh.loss.criterions.abs_loss import AbsEnhLoss
+from espnet_streaming_decoder.espnet2.enh.loss.wrappers.abs_wrapper import AbsLossWrapper
 
 
 class MixITSolver(AbsLossWrapper):

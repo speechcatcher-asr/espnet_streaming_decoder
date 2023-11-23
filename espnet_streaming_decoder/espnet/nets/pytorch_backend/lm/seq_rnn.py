@@ -4,7 +4,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from espnet.nets.lm_interface import LMInterface
+from espnet_streaming_decoder.espnet.nets.lm_interface import LMInterface
 
 
 class SequentialRNNLM(LMInterface, torch.nn.Module):

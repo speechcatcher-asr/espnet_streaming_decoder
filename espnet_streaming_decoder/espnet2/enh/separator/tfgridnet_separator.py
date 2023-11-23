@@ -9,10 +9,10 @@ from packaging.version import parse as V
 from torch.nn import init
 from torch.nn.parameter import Parameter
 
-from espnet2.enh.decoder.stft_decoder import STFTDecoder
-from espnet2.enh.encoder.stft_encoder import STFTEncoder
-from espnet2.enh.separator.abs_separator import AbsSeparator
-from espnet2.torch_utils.get_layer_from_string import get_layer
+from espnet_streaming_decoder.espnet2.enh.decoder.stft_decoder import STFTDecoder
+from espnet_streaming_decoder.espnet2.enh.encoder.stft_encoder import STFTEncoder
+from espnet_streaming_decoder.espnet2.enh.separator.abs_separator import AbsSeparator
+from espnet_streaming_decoder.espnet2.torch_utils.get_layer_from_string import get_layer
 
 is_torch_1_9_plus = V(torch.__version__) >= V("1.9.0")
 

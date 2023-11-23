@@ -11,7 +11,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from espnet2.enh.layers import dprnn
+from espnet_streaming_decoder.espnet2.enh.layers import dprnn
 
 
 # DPRNN for beamforming filter estimation

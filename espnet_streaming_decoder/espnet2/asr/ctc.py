@@ -41,7 +41,7 @@ class CTC(torch.nn.Module):
             )
 
         elif self.ctc_type == "gtnctc":
-            from espnet.nets.pytorch_backend.gtn_ctc import GTNCTCLossFunction
+            from espnet_streaming_decoder.espnet.nets.pytorch_backend.gtn_ctc import GTNCTCLossFunction
 
             self.ctc_loss = GTNCTCLossFunction.apply
         else:

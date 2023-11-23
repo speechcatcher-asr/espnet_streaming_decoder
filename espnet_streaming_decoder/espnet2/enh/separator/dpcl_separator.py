@@ -4,8 +4,8 @@ from typing import Dict, List, Optional, Tuple, Union
 import torch
 from torch_complex.tensor import ComplexTensor
 
-from espnet2.enh.separator.abs_separator import AbsSeparator
-from espnet.nets.pytorch_backend.rnn.encoders import RNN
+from espnet_streaming_decoder.espnet2.enh.separator.abs_separator import AbsSeparator
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.rnn.encoders import RNN
 
 
 class DPCLSeparator(AbsSeparator):

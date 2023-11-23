@@ -7,10 +7,10 @@ from packaging.version import parse as V
 from torch.nn import functional as F
 from torch_complex.tensor import ComplexTensor
 
-import espnet2.enh.layers.beamformer as bf_v1
-import espnet2.enh.layers.beamformer_th as bf_v2
-from espnet2.enh.layers.complex_utils import stack, to_double, to_float
-from espnet2.enh.layers.mask_estimator import MaskEstimator
+import espnet_streaming_decoder.espnet2.enh.layers.beamformer as bf_v1
+import espnet_streaming_decoder.espnet2.enh.layers.beamformer_th as bf_v2
+from espnet_streaming_decoder.espnet2.enh.layers.complex_utils import stack, to_double, to_float
+from espnet_streaming_decoder.espnet2.enh.layers.mask_estimator import MaskEstimator
 
 is_torch_1_9_plus = V(torch.__version__) >= V("1.9.0")
 is_torch_1_12_1_plus = V(torch.__version__) >= V("1.12.1")

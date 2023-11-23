@@ -9,7 +9,7 @@ import jamo
 from packaging.version import parse as V
 from typeguard import check_argument_types
 
-from espnet2.text.abs_tokenizer import AbsTokenizer
+from espnet_streaming_decoder.espnet2.text.abs_tokenizer import AbsTokenizer
 
 g2p_choices = [
     None,
@@ -114,7 +114,7 @@ def pyopenjtalk_g2p_prosody(text: str, drop_unvoiced_vowels: bool = True) -> Lis
         List[str]: List of phoneme + prosody symbols.
 
     Examples:
-        >>> from espnet2.text.phoneme_tokenizer import pyopenjtalk_g2p_prosody
+        >>> from espnet_streaming_decoder.espnet2.text.phoneme_tokenizer import pyopenjtalk_g2p_prosody
         >>> pyopenjtalk_g2p_prosody("こんにちは。")
         ['^', 'k', 'o', '[', 'N', 'n', 'i', 'ch', 'i', 'w', 'a', '$']
 

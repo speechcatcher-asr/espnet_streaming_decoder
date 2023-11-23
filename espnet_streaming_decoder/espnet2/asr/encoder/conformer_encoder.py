@@ -9,32 +9,32 @@ from typing import List, Optional, Tuple, Union
 import torch
 from typeguard import check_argument_types
 
-from espnet2.asr.ctc import CTC
-from espnet2.asr.encoder.abs_encoder import AbsEncoder
-from espnet.nets.pytorch_backend.conformer.convolution import ConvolutionModule
-from espnet.nets.pytorch_backend.conformer.encoder_layer import EncoderLayer
-from espnet.nets.pytorch_backend.nets_utils import get_activation, make_pad_mask
-from espnet.nets.pytorch_backend.transformer.attention import (
+from espnet_streaming_decoder.espnet2.asr.ctc import CTC
+from espnet_streaming_decoder.espnet2.asr.encoder.abs_encoder import AbsEncoder
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.conformer.convolution import ConvolutionModule
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.conformer.encoder_layer import EncoderLayer
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.nets_utils import get_activation, make_pad_mask
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.transformer.attention import (
     LegacyRelPositionMultiHeadedAttention,
     MultiHeadedAttention,
     RelPositionMultiHeadedAttention,
 )
-from espnet.nets.pytorch_backend.transformer.embedding import (
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.transformer.embedding import (
     LegacyRelPositionalEncoding,
     PositionalEncoding,
     RelPositionalEncoding,
     ScaledPositionalEncoding,
 )
-from espnet.nets.pytorch_backend.transformer.layer_norm import LayerNorm
-from espnet.nets.pytorch_backend.transformer.multi_layer_conv import (
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.transformer.layer_norm import LayerNorm
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.transformer.multi_layer_conv import (
     Conv1dLinear,
     MultiLayeredConv1d,
 )
-from espnet.nets.pytorch_backend.transformer.positionwise_feed_forward import (
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.transformer.positionwise_feed_forward import (
     PositionwiseFeedForward,
 )
-from espnet.nets.pytorch_backend.transformer.repeat import repeat
-from espnet.nets.pytorch_backend.transformer.subsampling import (
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.transformer.repeat import repeat
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.transformer.subsampling import (
     Conv2dSubsampling,
     Conv2dSubsampling1,
     Conv2dSubsampling2,

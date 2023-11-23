@@ -6,7 +6,7 @@ import torch_complex.functional as FC
 from packaging.version import parse as V
 from torch_complex.tensor import ComplexTensor
 
-from espnet2.enh.layers.complex_utils import einsum, matmul, reverse
+from espnet_streaming_decoder.espnet2.enh.layers.complex_utils import einsum, matmul, reverse
 
 is_torch_1_9_plus = V(torch.__version__) >= V("1.9.0")
 

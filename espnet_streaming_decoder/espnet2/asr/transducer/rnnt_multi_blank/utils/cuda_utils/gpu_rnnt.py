@@ -33,8 +33,8 @@ import numba
 import torch
 from numba import cuda
 
-from espnet2.asr.transducer.rnnt_multi_blank.utils import global_constants, rnnt_helper
-from espnet2.asr.transducer.rnnt_multi_blank.utils.cuda_utils import (
+from espnet_streaming_decoder.espnet2.asr.transducer.rnnt_multi_blank.utils import global_constants, rnnt_helper
+from espnet_streaming_decoder.espnet2.asr.transducer.rnnt_multi_blank.utils.cuda_utils import (
     gpu_rnnt_kernel,
     reduce,
 )

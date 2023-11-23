@@ -10,33 +10,33 @@ from argparse import Namespace
 import numpy
 import torch
 
-from espnet.nets.e2e_asr_common import ErrorCalculator as ASRErrorCalculator
-from espnet.nets.e2e_asr_common import end_detect
-from espnet.nets.e2e_mt_common import ErrorCalculator as MTErrorCalculator
-from espnet.nets.pytorch_backend.ctc import CTC
-from espnet.nets.pytorch_backend.e2e_asr import CTC_LOSS_THRESHOLD
-from espnet.nets.pytorch_backend.e2e_st import Reporter
-from espnet.nets.pytorch_backend.nets_utils import (
+from espnet_streaming_decoder.espnet.nets.e2e_asr_common import ErrorCalculator as ASRErrorCalculator
+from espnet_streaming_decoder.espnet.nets.e2e_asr_common import end_detect
+from espnet_streaming_decoder.espnet.nets.e2e_mt_common import ErrorCalculator as MTErrorCalculator
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.ctc import CTC
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.e2e_asr import CTC_LOSS_THRESHOLD
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.e2e_st import Reporter
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.nets_utils import (
     get_subsample,
     make_non_pad_mask,
     pad_list,
     th_accuracy,
 )
-from espnet.nets.pytorch_backend.transformer.add_sos_eos import add_sos_eos
-from espnet.nets.pytorch_backend.transformer.argument import (  # noqa: H301
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.transformer.add_sos_eos import add_sos_eos
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.transformer.argument import (  # noqa: H301
     add_arguments_transformer_common,
 )
-from espnet.nets.pytorch_backend.transformer.attention import MultiHeadedAttention
-from espnet.nets.pytorch_backend.transformer.decoder import Decoder
-from espnet.nets.pytorch_backend.transformer.encoder import Encoder
-from espnet.nets.pytorch_backend.transformer.initializer import initialize
-from espnet.nets.pytorch_backend.transformer.label_smoothing_loss import (  # noqa: H301
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.transformer.attention import MultiHeadedAttention
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.transformer.decoder import Decoder
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.transformer.encoder import Encoder
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.transformer.initializer import initialize
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.transformer.label_smoothing_loss import (  # noqa: H301
     LabelSmoothingLoss,
 )
-from espnet.nets.pytorch_backend.transformer.mask import subsequent_mask, target_mask
-from espnet.nets.pytorch_backend.transformer.plot import PlotAttentionReport
-from espnet.nets.st_interface import STInterface
-from espnet.utils.fill_missing_args import fill_missing_args
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.transformer.mask import subsequent_mask, target_mask
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.transformer.plot import PlotAttentionReport
+from espnet_streaming_decoder.espnet.nets.st_interface import STInterface
+from espnet_streaming_decoder.espnet.utils.fill_missing_args import fill_missing_args
 
 
 class E2E(STInterface, torch.nn.Module):

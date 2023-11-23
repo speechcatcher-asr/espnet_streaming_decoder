@@ -9,7 +9,7 @@ from typing import Tuple
 import torch
 from typeguard import check_argument_types
 
-from espnet2.asr.frontend.abs_frontend import AbsFrontend
+from espnet_streaming_decoder.espnet2.asr.frontend.abs_frontend import AbsFrontend
 
 
 class SlidingWindow(AbsFrontend):

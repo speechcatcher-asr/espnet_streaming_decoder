@@ -7,10 +7,10 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 import numpy as np
 import torch
 
-from espnet2.asr.decoder.abs_decoder import AbsDecoder
-from espnet2.asr_transducer.joint_network import JointNetwork
-from espnet2.lm.transformer_lm import TransformerLM
-from espnet.nets.pytorch_backend.transducer.utils import (
+from espnet_streaming_decoder.espnet2.asr.decoder.abs_decoder import AbsDecoder
+from espnet_streaming_decoder.espnet2.asr_transducer.joint_network import JointNetwork
+from espnet_streaming_decoder.espnet2.lm.transformer_lm import TransformerLM
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.transducer.utils import (
     is_prefix,
     recombine_hyps,
     select_k_expansions,

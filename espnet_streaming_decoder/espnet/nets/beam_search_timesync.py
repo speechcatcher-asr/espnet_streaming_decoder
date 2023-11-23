@@ -17,8 +17,8 @@ from typing import Any, Dict, List, Tuple
 import numpy as np
 import torch
 
-from espnet.nets.beam_search import Hypothesis
-from espnet.nets.scorer_interface import ScorerInterface
+from espnet_streaming_decoder.espnet.nets.beam_search import Hypothesis
+from espnet_streaming_decoder.espnet.nets.scorer_interface import ScorerInterface
 
 
 @dataclass

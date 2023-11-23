@@ -5,14 +5,14 @@ from typing import Any, Dict, List, Tuple
 import torch
 from typeguard import check_argument_types
 
-from espnet2.asr_transducer.encoder.building import (
+from espnet_streaming_decoder.espnet2.asr_transducer.encoder.building import (
     build_body_blocks,
     build_input_block,
     build_main_parameters,
     build_positional_encoding,
 )
-from espnet2.asr_transducer.encoder.validation import validate_architecture
-from espnet2.asr_transducer.utils import (
+from espnet_streaming_decoder.espnet2.asr_transducer.encoder.validation import validate_architecture
+from espnet_streaming_decoder.espnet2.asr_transducer.utils import (
     TooShortUttError,
     check_short_utt,
     make_chunk_mask,

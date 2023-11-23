@@ -6,7 +6,7 @@ import os
 
 import numpy
 
-from espnet.asr import asr_utils
+from espnet_streaming_decoder.espnet.asr import asr_utils
 
 
 def _plot_and_save_attention(att_w, filename, xtokens=None, ytokens=None):

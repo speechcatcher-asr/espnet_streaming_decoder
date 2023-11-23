@@ -1,9 +1,9 @@
 """SpecAugment module."""
 from typing import Optional, Sequence, Union
 
-from espnet2.asr.specaug.abs_specaug import AbsSpecAug
-from espnet2.layers.mask_along_axis import MaskAlongAxis, MaskAlongAxisVariableMaxWidth
-from espnet2.layers.time_warp import TimeWarp
+from espnet_streaming_decoder.espnet2.asr.specaug.abs_specaug import AbsSpecAug
+from espnet_streaming_decoder.espnet2.layers.mask_along_axis import MaskAlongAxis, MaskAlongAxisVariableMaxWidth
+from espnet_streaming_decoder.espnet2.layers.time_warp import TimeWarp
 
 
 class SpecAug(AbsSpecAug):

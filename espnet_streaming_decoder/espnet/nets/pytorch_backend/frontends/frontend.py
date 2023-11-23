@@ -5,8 +5,8 @@ import torch
 import torch.nn as nn
 from torch_complex.tensor import ComplexTensor
 
-from espnet.nets.pytorch_backend.frontends.dnn_beamformer import DNN_Beamformer
-from espnet.nets.pytorch_backend.frontends.dnn_wpe import DNN_WPE
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.frontends.dnn_beamformer import DNN_Beamformer
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.frontends.dnn_wpe import DNN_WPE
 
 
 class Frontend(nn.Module):

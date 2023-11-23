@@ -6,9 +6,9 @@ import numpy as np
 import torch
 from typeguard import check_argument_types
 
-from espnet2.iterators.abs_iter_factory import AbsIterFactory
-from espnet2.iterators.sequence_iter_factory import SequenceIterFactory
-from espnet2.samplers.abs_sampler import AbsSampler
+from espnet_streaming_decoder.espnet2.iterators.abs_iter_factory import AbsIterFactory
+from espnet_streaming_decoder.espnet2.iterators.sequence_iter_factory import SequenceIterFactory
+from espnet_streaming_decoder.espnet2.samplers.abs_sampler import AbsSampler
 
 
 class ChunkIterFactory(AbsIterFactory):

@@ -5,7 +5,7 @@ import numpy as np
 import torch
 from torch_complex.tensor import ComplexTensor
 
-from espnet.nets.pytorch_backend.nets_utils import make_pad_mask
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.nets_utils import make_pad_mask
 
 
 class FeatureTransform(torch.nn.Module):

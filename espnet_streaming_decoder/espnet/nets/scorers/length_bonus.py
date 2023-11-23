@@ -3,7 +3,7 @@ from typing import Any, List, Tuple
 
 import torch
 
-from espnet.nets.scorer_interface import BatchScorerInterface
+from espnet_streaming_decoder.espnet.nets.scorer_interface import BatchScorerInterface
 
 
 class LengthBonus(BatchScorerInterface):

@@ -4,7 +4,7 @@ from typing import Callable, Collection, Iterator
 import numpy as np
 from typeguard import check_argument_types
 
-from espnet2.iterators.abs_iter_factory import AbsIterFactory
+from espnet_streaming_decoder.espnet2.iterators.abs_iter_factory import AbsIterFactory
 
 
 class MultipleIterFactory(AbsIterFactory):

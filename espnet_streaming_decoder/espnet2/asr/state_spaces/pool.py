@@ -7,8 +7,8 @@ import torch.nn.functional as F
 from einops import rearrange, reduce, repeat
 from torch import nn
 
-from espnet2.asr.state_spaces.base import SequenceModule
-from espnet2.asr.state_spaces.components import LinearActivation
+from espnet_streaming_decoder.espnet2.asr.state_spaces.base import SequenceModule
+from espnet_streaming_decoder.espnet2.asr.state_spaces.components import LinearActivation
 
 """Simple pooling functions that just downsample or repeat
 

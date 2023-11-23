@@ -5,8 +5,8 @@ from typing import List, Optional, Tuple
 import torch
 from typeguard import check_argument_types
 
-from espnet2.asr_transducer.beam_search_transducer import Hypothesis
-from espnet2.asr_transducer.decoder.abs_decoder import AbsDecoder
+from espnet_streaming_decoder.espnet2.asr_transducer.beam_search_transducer import Hypothesis
+from espnet_streaming_decoder.espnet2.asr_transducer.decoder.abs_decoder import AbsDecoder
 
 
 class RNNDecoder(AbsDecoder):

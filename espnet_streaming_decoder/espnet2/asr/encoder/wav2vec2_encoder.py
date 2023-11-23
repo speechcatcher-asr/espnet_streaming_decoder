@@ -12,9 +12,9 @@ import torch
 from filelock import FileLock
 from typeguard import check_argument_types
 
-from espnet2.asr.encoder.abs_encoder import AbsEncoder
-from espnet.nets.pytorch_backend.nets_utils import make_pad_mask
-from espnet.nets.pytorch_backend.transformer.layer_norm import LayerNorm
+from espnet_streaming_decoder.espnet2.asr.encoder.abs_encoder import AbsEncoder
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.nets_utils import make_pad_mask
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.transformer.layer_norm import LayerNorm
 
 
 class FairSeqWav2Vec2Encoder(AbsEncoder):

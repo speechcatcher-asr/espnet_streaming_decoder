@@ -11,9 +11,9 @@ from typing import Tuple
 import torch
 from typeguard import check_argument_types
 
-from espnet2.asr.postencoder.abs_postencoder import AbsPostEncoder
-from espnet.nets.pytorch_backend.nets_utils import make_pad_mask
-from espnet.nets.pytorch_backend.transformer.subsampling import TooShortUttError
+from espnet_streaming_decoder.espnet2.asr.postencoder.abs_postencoder import AbsPostEncoder
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.nets_utils import make_pad_mask
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.transformer.subsampling import TooShortUttError
 
 try:
     from transformers import AutoModel

@@ -7,9 +7,9 @@ from typing import List
 import torch
 import yaml
 
-from espnet.nets.batch_beam_search import BatchBeamSearch
-from espnet.nets.beam_search import Hypothesis
-from espnet.nets.e2e_asr_common import end_detect
+from espnet_streaming_decoder.espnet.nets.batch_beam_search import BatchBeamSearch
+from espnet_streaming_decoder.espnet.nets.beam_search import Hypothesis
+from espnet_streaming_decoder.espnet.nets.e2e_asr_common import end_detect
 
 
 class BatchBeamSearchOnlineSim(BatchBeamSearch):

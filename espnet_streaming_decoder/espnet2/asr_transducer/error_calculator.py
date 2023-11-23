@@ -4,9 +4,9 @@ from typing import List, Optional, Tuple
 
 import torch
 
-from espnet2.asr_transducer.beam_search_transducer import BeamSearchTransducer
-from espnet2.asr_transducer.decoder.abs_decoder import AbsDecoder
-from espnet2.asr_transducer.joint_network import JointNetwork
+from espnet_streaming_decoder.espnet2.asr_transducer.beam_search_transducer import BeamSearchTransducer
+from espnet_streaming_decoder.espnet2.asr_transducer.decoder.abs_decoder import AbsDecoder
+from espnet_streaming_decoder.espnet2.asr_transducer.joint_network import JointNetwork
 
 
 class ErrorCalculator:

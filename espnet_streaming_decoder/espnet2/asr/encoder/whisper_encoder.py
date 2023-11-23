@@ -5,8 +5,8 @@ import torch
 import torch.nn.functional as F
 from typeguard import check_argument_types
 
-from espnet2.asr.encoder.abs_encoder import AbsEncoder
-from espnet2.asr.specaug.specaug import SpecAug
+from espnet_streaming_decoder.espnet2.asr.encoder.abs_encoder import AbsEncoder
+from espnet_streaming_decoder.espnet2.asr.specaug.specaug import SpecAug
 
 
 class OpenAIWhisperEncoder(AbsEncoder):

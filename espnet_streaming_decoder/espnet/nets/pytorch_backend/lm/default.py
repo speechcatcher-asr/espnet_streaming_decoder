@@ -7,10 +7,10 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from espnet.nets.lm_interface import LMInterface
-from espnet.nets.pytorch_backend.e2e_asr import to_device
-from espnet.nets.scorer_interface import BatchScorerInterface
-from espnet.utils.cli_utils import strtobool
+from espnet_streaming_decoder.espnet.nets.lm_interface import LMInterface
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.e2e_asr import to_device
+from espnet_streaming_decoder.espnet.nets.scorer_interface import BatchScorerInterface
+from espnet_streaming_decoder.espnet.utils.cli_utils import strtobool
 
 
 class DefaultRNNLM(BatchScorerInterface, LMInterface, nn.Module):

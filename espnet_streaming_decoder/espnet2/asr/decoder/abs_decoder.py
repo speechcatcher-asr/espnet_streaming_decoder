@@ -3,7 +3,7 @@ from typing import Tuple
 
 import torch
 
-from espnet.nets.scorer_interface import ScorerInterface
+from espnet_streaming_decoder.espnet.nets.scorer_interface import ScorerInterface
 
 
 class AbsDecoder(torch.nn.Module, ScorerInterface, ABC):

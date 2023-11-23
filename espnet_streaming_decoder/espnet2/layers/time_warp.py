@@ -1,7 +1,7 @@
 """Time warp module."""
 import torch
 
-from espnet.nets.pytorch_backend.nets_utils import pad_list
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.nets_utils import pad_list
 
 DEFAULT_TIME_WARP_MODE = "bicubic"
 

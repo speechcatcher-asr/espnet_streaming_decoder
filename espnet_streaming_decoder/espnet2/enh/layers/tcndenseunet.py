@@ -2,7 +2,7 @@ import torch
 from packaging.version import parse as V
 from torch_complex.tensor import ComplexTensor
 
-from espnet2.torch_utils.get_layer_from_string import get_layer
+from espnet_streaming_decoder.espnet2.torch_utils.get_layer_from_string import get_layer
 
 is_torch_1_9_plus = V(torch.__version__) >= V("1.9.0")
 

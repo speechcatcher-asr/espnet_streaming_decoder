@@ -9,7 +9,7 @@ try:
 except ImportError:
     vietnamese_cleaners = None
 
-from espnet2.text.korean_cleaner import KoreanCleaner
+from espnet_streaming_decoder.espnet2.text.korean_cleaner import KoreanCleaner
 
 try:
     from whisper.normalizers import BasicTextNormalizer, EnglishTextNormalizer

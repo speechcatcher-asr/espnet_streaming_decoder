@@ -33,7 +33,7 @@ from typing import Optional, Tuple
 import torch
 from numba import cuda
 
-from espnet2.asr.transducer.rnnt_multi_blank.utils import global_constants
+from espnet_streaming_decoder.espnet2.asr.transducer.rnnt_multi_blank.utils import global_constants
 
 threshold = global_constants.THRESHOLD
 

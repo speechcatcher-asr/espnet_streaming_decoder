@@ -14,14 +14,14 @@ import torch
 from packaging.version import parse as V
 from typeguard import check_argument_types
 
-from espnet2.schedulers.abs_scheduler import AbsBatchStepScheduler, AbsScheduler
-from espnet2.torch_utils.device_funcs import to_device
-from espnet2.torch_utils.recursive_op import recursive_average
-from espnet2.train.distributed_utils import DistributedOption
-from espnet2.train.reporter import SubReporter
-from espnet2.train.trainer import Trainer, TrainerOptions
-from espnet2.utils.build_dataclass import build_dataclass
-from espnet2.utils.types import str2bool
+from espnet_streaming_decoder.espnet2.schedulers.abs_scheduler import AbsBatchStepScheduler, AbsScheduler
+from espnet_streaming_decoder.espnet2.torch_utils.device_funcs import to_device
+from espnet_streaming_decoder.espnet2.torch_utils.recursive_op import recursive_average
+from espnet_streaming_decoder.espnet2.train.distributed_utils import DistributedOption
+from espnet_streaming_decoder.espnet2.train.reporter import SubReporter
+from espnet_streaming_decoder.espnet2.train.trainer import Trainer, TrainerOptions
+from espnet_streaming_decoder.espnet2.utils.build_dataclass import build_dataclass
+from espnet_streaming_decoder.espnet2.utils.types import str2bool
 
 if torch.distributed.is_available():
     from torch.distributed import ReduceOp

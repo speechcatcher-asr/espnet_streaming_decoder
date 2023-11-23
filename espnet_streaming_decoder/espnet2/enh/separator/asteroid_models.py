@@ -4,7 +4,7 @@ from typing import Dict, Optional, Tuple
 
 import torch
 
-from espnet2.enh.separator.abs_separator import AbsSeparator
+from espnet_streaming_decoder.espnet2.enh.separator.abs_separator import AbsSeparator
 
 
 class AsteroidModel_Converter(AbsSeparator):

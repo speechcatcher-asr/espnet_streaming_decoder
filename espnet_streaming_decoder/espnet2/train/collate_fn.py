@@ -5,7 +5,7 @@ import numpy as np
 import torch
 from typeguard import check_argument_types, check_return_type
 
-from espnet.nets.pytorch_backend.nets_utils import pad_list
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.nets_utils import pad_list
 
 
 class CommonCollateFn:
@@ -166,9 +166,9 @@ def common_collate_fn(
     """Concatenate ndarray-list to an array and convert to torch.Tensor.
 
     Examples:
-        >>> from espnet2.samplers.constant_batch_sampler import ConstantBatchSampler,
-        >>> import espnet2.tasks.abs_task
-        >>> from espnet2.train.dataset import ESPnetDataset
+        >>> from espnet_streaming_decoder.espnet2.samplers.constant_batch_sampler import ConstantBatchSampler,
+        >>> import espnet_streaming_decoder.espnet2.tasks.abs_task
+        >>> from espnet_streaming_decoder.espnet2.train.dataset import ESPnetDataset
         >>> sampler = ConstantBatchSampler(...)
         >>> dataset = ESPnetDataset(...)
         >>> keys = next(iter(sampler)

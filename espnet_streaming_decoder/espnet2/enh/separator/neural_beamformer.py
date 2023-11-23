@@ -4,9 +4,9 @@ from typing import Dict, List, Optional, Tuple, Union
 import torch
 from torch_complex.tensor import ComplexTensor
 
-from espnet2.enh.layers.dnn_beamformer import DNN_Beamformer
-from espnet2.enh.layers.dnn_wpe import DNN_WPE
-from espnet2.enh.separator.abs_separator import AbsSeparator
+from espnet_streaming_decoder.espnet2.enh.layers.dnn_beamformer import DNN_Beamformer
+from espnet_streaming_decoder.espnet2.enh.layers.dnn_wpe import DNN_WPE
+from espnet_streaming_decoder.espnet2.enh.separator.abs_separator import AbsSeparator
 
 
 class NeuralBeamformer(AbsSeparator):

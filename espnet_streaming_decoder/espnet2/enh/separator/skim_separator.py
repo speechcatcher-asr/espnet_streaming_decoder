@@ -4,9 +4,9 @@ from typing import Dict, List, Optional, Tuple, Union
 import torch
 from torch_complex.tensor import ComplexTensor
 
-from espnet2.enh.layers.complex_utils import is_complex
-from espnet2.enh.layers.skim import SkiM
-from espnet2.enh.separator.abs_separator import AbsSeparator
+from espnet_streaming_decoder.espnet2.enh.layers.complex_utils import is_complex
+from espnet_streaming_decoder.espnet2.enh.layers.skim import SkiM
+from espnet_streaming_decoder.espnet2.enh.separator.abs_separator import AbsSeparator
 
 
 class SkiMSeparator(AbsSeparator):

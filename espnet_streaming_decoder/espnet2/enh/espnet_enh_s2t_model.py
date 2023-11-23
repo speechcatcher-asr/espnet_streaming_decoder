@@ -10,12 +10,12 @@ from packaging.version import parse as V
 from scipy.optimize import linear_sum_assignment
 from typeguard import check_argument_types
 
-from espnet2.asr.espnet_model import ESPnetASRModel
-from espnet2.diar.espnet_model import ESPnetDiarizationModel
-from espnet2.enh.espnet_model import ESPnetEnhancementModel
-from espnet2.st.espnet_model import ESPnetSTModel
-from espnet2.torch_utils.device_funcs import force_gatherable
-from espnet2.train.abs_espnet_model import AbsESPnetModel
+from espnet_streaming_decoder.espnet2.asr.espnet_model import ESPnetASRModel
+from espnet_streaming_decoder.espnet2.diar.espnet_model import ESPnetDiarizationModel
+from espnet_streaming_decoder.espnet2.enh.espnet_model import ESPnetEnhancementModel
+from espnet_streaming_decoder.espnet2.st.espnet_model import ESPnetSTModel
+from espnet_streaming_decoder.espnet2.torch_utils.device_funcs import force_gatherable
+from espnet_streaming_decoder.espnet2.train.abs_espnet_model import AbsESPnetModel
 
 if V(torch.__version__) >= V("1.6.0"):
     from torch.cuda.amp import autocast

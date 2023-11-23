@@ -2,7 +2,7 @@
 
 from typing import Any, Dict, List, Tuple
 
-from espnet2.asr_transducer.utils import sub_factor_to_params
+from espnet_streaming_decoder.espnet2.asr_transducer.utils import sub_factor_to_params
 
 
 def validate_block_arguments(

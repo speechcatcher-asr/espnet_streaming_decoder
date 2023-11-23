@@ -8,29 +8,29 @@ import logging
 import torch
 import torch.nn.functional as F
 
-from espnet.nets.pytorch_backend.e2e_asr_transformer import subsequent_mask
-from espnet.nets.pytorch_backend.e2e_tts_tacotron2 import (
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.e2e_asr_transformer import subsequent_mask
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.e2e_tts_tacotron2 import (
     Tacotron2Loss as TransformerLoss,
 )
-from espnet.nets.pytorch_backend.e2e_tts_transformer import TTSPlot  # noqa: H301
-from espnet.nets.pytorch_backend.e2e_tts_transformer import (  # noqa: H301
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.e2e_tts_transformer import TTSPlot  # noqa: H301
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.e2e_tts_transformer import (  # noqa: H301
     GuidedMultiHeadAttentionLoss,
 )
-from espnet.nets.pytorch_backend.nets_utils import make_non_pad_mask
-from espnet.nets.pytorch_backend.tacotron2.decoder import Postnet
-from espnet.nets.pytorch_backend.tacotron2.decoder import Prenet as DecoderPrenet
-from espnet.nets.pytorch_backend.tacotron2.encoder import Encoder as EncoderPrenet
-from espnet.nets.pytorch_backend.transformer.attention import MultiHeadedAttention
-from espnet.nets.pytorch_backend.transformer.decoder import Decoder
-from espnet.nets.pytorch_backend.transformer.embedding import (
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.nets_utils import make_non_pad_mask
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.tacotron2.decoder import Postnet
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.tacotron2.decoder import Prenet as DecoderPrenet
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.tacotron2.encoder import Encoder as EncoderPrenet
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.transformer.attention import MultiHeadedAttention
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.transformer.decoder import Decoder
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.transformer.embedding import (
     PositionalEncoding,
     ScaledPositionalEncoding,
 )
-from espnet.nets.pytorch_backend.transformer.encoder import Encoder
-from espnet.nets.pytorch_backend.transformer.initializer import initialize
-from espnet.nets.tts_interface import TTSInterface
-from espnet.utils.cli_utils import strtobool
-from espnet.utils.fill_missing_args import fill_missing_args
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.transformer.encoder import Encoder
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.transformer.initializer import initialize
+from espnet_streaming_decoder.espnet.nets.tts_interface import TTSInterface
+from espnet_streaming_decoder.espnet.utils.cli_utils import strtobool
+from espnet_streaming_decoder.espnet.utils.fill_missing_args import fill_missing_args
 
 
 class Transformer(TTSInterface, torch.nn.Module):

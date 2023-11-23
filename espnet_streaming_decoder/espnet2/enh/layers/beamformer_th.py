@@ -38,7 +38,7 @@ def prepare_beamformer_stats(
               can be a list, e.g., "psd_n" for MVDR, "psd_speech" and "psd_distortion".
 
     """
-    from espnet2.enh.layers.dnn_beamformer import BEAMFORMER_TYPES
+    from espnet_streaming_decoder.espnet2.enh.layers.dnn_beamformer import BEAMFORMER_TYPES
 
     assert beamformer_type in BEAMFORMER_TYPES, "%s is not supported yet"
 

@@ -6,8 +6,8 @@ import numpy as np
 from torch.utils.data import DataLoader
 from typeguard import check_argument_types
 
-from espnet2.iterators.abs_iter_factory import AbsIterFactory
-from espnet2.samplers.abs_sampler import AbsSampler
+from espnet_streaming_decoder.espnet2.iterators.abs_iter_factory import AbsIterFactory
+from espnet_streaming_decoder.espnet2.samplers.abs_sampler import AbsSampler
 
 
 def worker_init_fn(worker_id, base_seed=0):

@@ -5,14 +5,14 @@ import torch
 from packaging.version import parse as V
 from torch_complex.tensor import ComplexTensor
 
-from espnet2.enh.layers.complex_utils import is_complex
-from espnet2.enh.separator.abs_separator import AbsSeparator
-from espnet.nets.pytorch_backend.nets_utils import make_non_pad_mask
-from espnet.nets.pytorch_backend.transformer.embedding import (  # noqa: H301
+from espnet_streaming_decoder.espnet2.enh.layers.complex_utils import is_complex
+from espnet_streaming_decoder.espnet2.enh.separator.abs_separator import AbsSeparator
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.nets_utils import make_non_pad_mask
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.transformer.embedding import (  # noqa: H301
     PositionalEncoding,
     ScaledPositionalEncoding,
 )
-from espnet.nets.pytorch_backend.transformer.encoder import (
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.transformer.encoder import (
     Encoder as TransformerEncoder,
 )
 

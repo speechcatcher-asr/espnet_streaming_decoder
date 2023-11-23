@@ -7,17 +7,17 @@ import torch
 from packaging.version import parse as V
 from typeguard import check_argument_types
 
-from espnet2.asr.ctc import CTC
-from espnet2.asr.decoder.abs_decoder import AbsDecoder
-from espnet2.asr.encoder.abs_encoder import AbsEncoder
-from espnet2.asr.espnet_model import ESPnetASRModel as SingleESPnetASRModel
-from espnet2.asr.frontend.abs_frontend import AbsFrontend
-from espnet2.asr.postencoder.abs_postencoder import AbsPostEncoder
-from espnet2.asr.preencoder.abs_preencoder import AbsPreEncoder
-from espnet2.asr.specaug.abs_specaug import AbsSpecAug
-from espnet2.enh.loss.wrappers.abs_wrapper import AbsLossWrapper
-from espnet2.layers.abs_normalize import AbsNormalize
-from espnet2.torch_utils.device_funcs import force_gatherable
+from espnet_streaming_decoder.espnet2.asr.ctc import CTC
+from espnet_streaming_decoder.espnet2.asr.decoder.abs_decoder import AbsDecoder
+from espnet_streaming_decoder.espnet2.asr.encoder.abs_encoder import AbsEncoder
+from espnet_streaming_decoder.espnet2.asr.espnet_model import ESPnetASRModel as SingleESPnetASRModel
+from espnet_streaming_decoder.espnet2.asr.frontend.abs_frontend import AbsFrontend
+from espnet_streaming_decoder.espnet2.asr.postencoder.abs_postencoder import AbsPostEncoder
+from espnet_streaming_decoder.espnet2.asr.preencoder.abs_preencoder import AbsPreEncoder
+from espnet_streaming_decoder.espnet2.asr.specaug.abs_specaug import AbsSpecAug
+from espnet_streaming_decoder.espnet2.enh.loss.wrappers.abs_wrapper import AbsLossWrapper
+from espnet_streaming_decoder.espnet2.layers.abs_normalize import AbsNormalize
+from espnet_streaming_decoder.espnet2.torch_utils.device_funcs import force_gatherable
 
 if V(torch.__version__) >= V("1.6.0"):
     from torch.cuda.amp import autocast

@@ -6,20 +6,20 @@ import numpy as np
 import torch
 from typeguard import check_argument_types, check_return_type
 
-from espnet2.lm.abs_model import AbsLM
-from espnet2.lm.espnet_model import ESPnetLanguageModel
-from espnet2.lm.seq_rnn_lm import SequentialRNNLM
-from espnet2.lm.transformer_lm import TransformerLM
-from espnet2.tasks.abs_task import AbsTask
-from espnet2.text.phoneme_tokenizer import g2p_choices
-from espnet2.torch_utils.initialize import initialize
-from espnet2.train.class_choices import ClassChoices
-from espnet2.train.collate_fn import CommonCollateFn
-from espnet2.train.preprocessor import CommonPreprocessor
-#from espnet2.train.trainer import Trainer
-from espnet2.utils.get_default_kwargs import get_default_kwargs
-from espnet2.utils.nested_dict_action import NestedDictAction
-from espnet2.utils.types import str2bool, str_or_none
+from espnet_streaming_decoder.espnet2.lm.abs_model import AbsLM
+from espnet_streaming_decoder.espnet2.lm.espnet_model import ESPnetLanguageModel
+from espnet_streaming_decoder.espnet2.lm.seq_rnn_lm import SequentialRNNLM
+from espnet_streaming_decoder.espnet2.lm.transformer_lm import TransformerLM
+from espnet_streaming_decoder.espnet2.tasks.abs_task import AbsTask
+from espnet_streaming_decoder.espnet2.text.phoneme_tokenizer import g2p_choices
+from espnet_streaming_decoder.espnet2.torch_utils.initialize import initialize
+from espnet_streaming_decoder.espnet2.train.class_choices import ClassChoices
+from espnet_streaming_decoder.espnet2.train.collate_fn import CommonCollateFn
+from espnet_streaming_decoder.espnet2.train.preprocessor import CommonPreprocessor
+#from espnet_streaming_decoder.espnet2.train.trainer import Trainer
+from espnet_streaming_decoder.espnet2.utils.get_default_kwargs import get_default_kwargs
+from espnet_streaming_decoder.espnet2.utils.nested_dict_action import NestedDictAction
+from espnet_streaming_decoder.espnet2.utils.types import str2bool, str_or_none
 
 lm_choices = ClassChoices(
     "lm",

@@ -11,8 +11,8 @@ from typing import Tuple
 import torch
 from typeguard import check_argument_types
 
-from espnet2.asr.decoder.abs_decoder import AbsDecoder
-from espnet.nets.pytorch_backend.nets_utils import make_pad_mask
+from espnet_streaming_decoder.espnet2.asr.decoder.abs_decoder import AbsDecoder
+from espnet_streaming_decoder.espnet.nets.pytorch_backend.nets_utils import make_pad_mask
 
 try:
     from transformers import AutoModelForSeq2SeqLM

@@ -6,10 +6,10 @@ import torch
 import torch.nn as nn
 from einops import rearrange
 
-from espnet2.asr.state_spaces.base import SequenceModule
-from espnet2.asr.state_spaces.block import SequenceResidualBlock
-from espnet2.asr.state_spaces.components import DropoutNd, Normalization
-from espnet2.asr.state_spaces.utils import to_dict, to_list
+from espnet_streaming_decoder.espnet2.asr.state_spaces.base import SequenceModule
+from espnet_streaming_decoder.espnet2.asr.state_spaces.block import SequenceResidualBlock
+from espnet_streaming_decoder.espnet2.asr.state_spaces.components import DropoutNd, Normalization
+from espnet_streaming_decoder.espnet2.asr.state_spaces.utils import to_dict, to_list
 
 
 class SequenceModel(SequenceModule):

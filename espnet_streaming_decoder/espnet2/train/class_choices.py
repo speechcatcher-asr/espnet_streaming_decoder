@@ -2,8 +2,8 @@ from typing import Mapping, Optional, Tuple
 
 from typeguard import check_argument_types, check_return_type
 
-from espnet2.utils.nested_dict_action import NestedDictAction
-from espnet2.utils.types import str_or_none
+from espnet_streaming_decoder.espnet2.utils.nested_dict_action import NestedDictAction
+from espnet_streaming_decoder.espnet2.utils.types import str_or_none
 
 
 class ClassChoices:

@@ -6,84 +6,84 @@ import numpy as np
 import torch
 from typeguard import check_argument_types, check_return_type
 
-from espnet2.asr.ctc import CTC
-from espnet2.asr.decoder.abs_decoder import AbsDecoder
-from espnet2.asr.decoder.hugging_face_transformers_decoder import (  # noqa: H301
+from espnet_streaming_decoder.espnet2.asr.ctc import CTC
+from espnet_streaming_decoder.espnet2.asr.decoder.abs_decoder import AbsDecoder
+from espnet_streaming_decoder.espnet2.asr.decoder.hugging_face_transformers_decoder import (  # noqa: H301
     HuggingFaceTransformersDecoder,
 )
-from espnet2.asr.decoder.mlm_decoder import MLMDecoder
-from espnet2.asr.decoder.rnn_decoder import RNNDecoder
-from espnet2.asr.decoder.s4_decoder import S4Decoder
-from espnet2.asr.decoder.transducer_decoder import TransducerDecoder
-from espnet2.asr.decoder.transformer_decoder import (
+from espnet_streaming_decoder.espnet2.asr.decoder.mlm_decoder import MLMDecoder
+from espnet_streaming_decoder.espnet2.asr.decoder.rnn_decoder import RNNDecoder
+from espnet_streaming_decoder.espnet2.asr.decoder.s4_decoder import S4Decoder
+from espnet_streaming_decoder.espnet2.asr.decoder.transducer_decoder import TransducerDecoder
+from espnet_streaming_decoder.espnet2.asr.decoder.transformer_decoder import (
     DynamicConvolution2DTransformerDecoder,
     DynamicConvolutionTransformerDecoder,
     LightweightConvolution2DTransformerDecoder,
     LightweightConvolutionTransformerDecoder,
     TransformerDecoder,
 )
-from espnet2.asr.decoder.whisper_decoder import OpenAIWhisperDecoder
-from espnet2.asr.encoder.abs_encoder import AbsEncoder
-from espnet2.asr.encoder.branchformer_encoder import BranchformerEncoder
-from espnet2.asr.encoder.conformer_encoder import ConformerEncoder
-from espnet2.asr.encoder.contextual_block_conformer_encoder import (
+from espnet_streaming_decoder.espnet2.asr.decoder.whisper_decoder import OpenAIWhisperDecoder
+from espnet_streaming_decoder.espnet2.asr.encoder.abs_encoder import AbsEncoder
+from espnet_streaming_decoder.espnet2.asr.encoder.branchformer_encoder import BranchformerEncoder
+from espnet_streaming_decoder.espnet2.asr.encoder.conformer_encoder import ConformerEncoder
+from espnet_streaming_decoder.espnet2.asr.encoder.contextual_block_conformer_encoder import (
     ContextualBlockConformerEncoder,
 )
-from espnet2.asr.encoder.contextual_block_transformer_encoder import (
+from espnet_streaming_decoder.espnet2.asr.encoder.contextual_block_transformer_encoder import (
     ContextualBlockTransformerEncoder,
 )
-from espnet2.asr.encoder.e_branchformer_encoder import EBranchformerEncoder
-from espnet2.asr.encoder.hubert_encoder import (
+from espnet_streaming_decoder.espnet2.asr.encoder.e_branchformer_encoder import EBranchformerEncoder
+from espnet_streaming_decoder.espnet2.asr.encoder.hubert_encoder import (
     FairseqHubertEncoder,
     FairseqHubertPretrainEncoder,
     TorchAudioHuBERTPretrainEncoder,
 )
-from espnet2.asr.encoder.longformer_encoder import LongformerEncoder
-from espnet2.asr.encoder.rnn_encoder import RNNEncoder
-from espnet2.asr.encoder.transformer_encoder import TransformerEncoder
-from espnet2.asr.encoder.transformer_encoder_multispkr import (
+from espnet_streaming_decoder.espnet2.asr.encoder.longformer_encoder import LongformerEncoder
+from espnet_streaming_decoder.espnet2.asr.encoder.rnn_encoder import RNNEncoder
+from espnet_streaming_decoder.espnet2.asr.encoder.transformer_encoder import TransformerEncoder
+from espnet_streaming_decoder.espnet2.asr.encoder.transformer_encoder_multispkr import (
     TransformerEncoder as TransformerEncoderMultiSpkr,
 )
-from espnet2.asr.encoder.vgg_rnn_encoder import VGGRNNEncoder
-from espnet2.asr.encoder.wav2vec2_encoder import FairSeqWav2Vec2Encoder
-from espnet2.asr.encoder.whisper_encoder import OpenAIWhisperEncoder
-from espnet2.asr.espnet_model import ESPnetASRModel
-from espnet2.asr.frontend.abs_frontend import AbsFrontend
-from espnet2.asr.frontend.default import DefaultFrontend
-from espnet2.asr.frontend.fused import FusedFrontends
-from espnet2.asr.frontend.s3prl import S3prlFrontend
-from espnet2.asr.frontend.whisper import WhisperFrontend
-from espnet2.asr.frontend.windowing import SlidingWindow
-from espnet2.asr.maskctc_model import MaskCTCModel
-from espnet2.asr.pit_espnet_model import ESPnetASRModel as PITESPnetModel
-from espnet2.asr.postencoder.abs_postencoder import AbsPostEncoder
-from espnet2.asr.postencoder.hugging_face_transformers_postencoder import (
+from espnet_streaming_decoder.espnet2.asr.encoder.vgg_rnn_encoder import VGGRNNEncoder
+from espnet_streaming_decoder.espnet2.asr.encoder.wav2vec2_encoder import FairSeqWav2Vec2Encoder
+from espnet_streaming_decoder.espnet2.asr.encoder.whisper_encoder import OpenAIWhisperEncoder
+from espnet_streaming_decoder.espnet2.asr.espnet_model import ESPnetASRModel
+from espnet_streaming_decoder.espnet2.asr.frontend.abs_frontend import AbsFrontend
+from espnet_streaming_decoder.espnet2.asr.frontend.default import DefaultFrontend
+from espnet_streaming_decoder.espnet2.asr.frontend.fused import FusedFrontends
+from espnet_streaming_decoder.espnet2.asr.frontend.s3prl import S3prlFrontend
+from espnet_streaming_decoder.espnet2.asr.frontend.whisper import WhisperFrontend
+from espnet_streaming_decoder.espnet2.asr.frontend.windowing import SlidingWindow
+from espnet_streaming_decoder.espnet2.asr.maskctc_model import MaskCTCModel
+from espnet_streaming_decoder.espnet2.asr.pit_espnet_model import ESPnetASRModel as PITESPnetModel
+from espnet_streaming_decoder.espnet2.asr.postencoder.abs_postencoder import AbsPostEncoder
+from espnet_streaming_decoder.espnet2.asr.postencoder.hugging_face_transformers_postencoder import (
     HuggingFaceTransformersPostEncoder,
 )
-from espnet2.asr.preencoder.abs_preencoder import AbsPreEncoder
-from espnet2.asr.preencoder.linear import LinearProjection
-from espnet2.asr.preencoder.sinc import LightweightSincConvs
-from espnet2.asr.specaug.abs_specaug import AbsSpecAug
-from espnet2.asr.specaug.specaug import SpecAug
-from espnet2.asr_transducer.joint_network import JointNetwork
-from espnet2.layers.abs_normalize import AbsNormalize
-from espnet2.layers.global_mvn import GlobalMVN
-from espnet2.layers.utterance_mvn import UtteranceMVN
-from espnet2.tasks.abs_task import AbsTask
-from espnet2.text.phoneme_tokenizer import g2p_choices
-from espnet2.torch_utils.initialize import initialize
-from espnet2.train.abs_espnet_model import AbsESPnetModel
-from espnet2.train.class_choices import ClassChoices
-from espnet2.train.collate_fn import CommonCollateFn
-from espnet2.train.preprocessor import (
+from espnet_streaming_decoder.espnet2.asr.preencoder.abs_preencoder import AbsPreEncoder
+from espnet_streaming_decoder.espnet2.asr.preencoder.linear import LinearProjection
+from espnet_streaming_decoder.espnet2.asr.preencoder.sinc import LightweightSincConvs
+from espnet_streaming_decoder.espnet2.asr.specaug.abs_specaug import AbsSpecAug
+from espnet_streaming_decoder.espnet2.asr.specaug.specaug import SpecAug
+from espnet_streaming_decoder.espnet2.asr_transducer.joint_network import JointNetwork
+from espnet_streaming_decoder.espnet2.layers.abs_normalize import AbsNormalize
+from espnet_streaming_decoder.espnet2.layers.global_mvn import GlobalMVN
+from espnet_streaming_decoder.espnet2.layers.utterance_mvn import UtteranceMVN
+from espnet_streaming_decoder.espnet2.tasks.abs_task import AbsTask
+from espnet_streaming_decoder.espnet2.text.phoneme_tokenizer import g2p_choices
+from espnet_streaming_decoder.espnet2.torch_utils.initialize import initialize
+from espnet_streaming_decoder.espnet2.train.abs_espnet_model import AbsESPnetModel
+from espnet_streaming_decoder.espnet2.train.class_choices import ClassChoices
+from espnet_streaming_decoder.espnet2.train.collate_fn import CommonCollateFn
+from espnet_streaming_decoder.espnet2.train.preprocessor import (
     AbsPreprocessor,
     CommonPreprocessor,
     CommonPreprocessor_multi,
 )
-from espnet2.train.trainer import Trainer
-from espnet2.utils.get_default_kwargs import get_default_kwargs
-from espnet2.utils.nested_dict_action import NestedDictAction
-from espnet2.utils.types import float_or_none, int_or_none, str2bool, str_or_none
+from espnet_streaming_decoder.espnet2.train.trainer import Trainer
+from espnet_streaming_decoder.espnet2.utils.get_default_kwargs import get_default_kwargs
+from espnet_streaming_decoder.espnet2.utils.nested_dict_action import NestedDictAction
+from espnet_streaming_decoder.espnet2.utils.types import float_or_none, int_or_none, str2bool, str_or_none
 
 frontend_choices = ClassChoices(
     name="frontend",

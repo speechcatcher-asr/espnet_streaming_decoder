@@ -32,7 +32,7 @@ import math
 import torch
 from numba import cuda
 
-from espnet2.asr.transducer.rnnt_multi_blank.utils import global_constants, rnnt_helper
+from espnet_streaming_decoder.espnet2.asr.transducer.rnnt_multi_blank.utils import global_constants, rnnt_helper
 
 warp_size = global_constants.warp_size()
 dtype = global_constants.dtype()

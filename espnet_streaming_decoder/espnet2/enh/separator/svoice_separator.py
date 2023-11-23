@@ -6,9 +6,9 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from espnet2.enh.layers.dpmulcat import DPMulCat
-from espnet2.enh.layers.dprnn import merge_feature, split_feature
-from espnet2.enh.separator.abs_separator import AbsSeparator
+from espnet_streaming_decoder.espnet2.enh.layers.dpmulcat import DPMulCat
+from espnet_streaming_decoder.espnet2.enh.layers.dprnn import merge_feature, split_feature
+from espnet_streaming_decoder.espnet2.enh.separator.abs_separator import AbsSeparator
 
 
 def overlap_and_add(signal, frame_step):

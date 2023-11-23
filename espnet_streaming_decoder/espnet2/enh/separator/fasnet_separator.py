@@ -4,9 +4,9 @@ from typing import Dict, List, Optional, Tuple
 import torch
 from packaging.version import parse as V
 
-from espnet2.enh.layers.fasnet import FaSNet_TAC
-from espnet2.enh.layers.ifasnet import iFaSNet
-from espnet2.enh.separator.abs_separator import AbsSeparator
+from espnet_streaming_decoder.espnet2.enh.layers.fasnet import FaSNet_TAC
+from espnet_streaming_decoder.espnet2.enh.layers.ifasnet import iFaSNet
+from espnet_streaming_decoder.espnet2.enh.separator.abs_separator import AbsSeparator
 
 is_torch_1_9_plus = V(torch.__version__) >= V("1.9.0")
 

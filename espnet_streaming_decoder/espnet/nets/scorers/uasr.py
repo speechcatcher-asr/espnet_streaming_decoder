@@ -3,8 +3,8 @@
 import numpy as np
 import torch
 
-from espnet.nets.ctc_prefix_score import CTCPrefixScore, CTCPrefixScoreTH
-from espnet.nets.scorers.ctc import CTCPrefixScorer
+from espnet_streaming_decoder.espnet.nets.ctc_prefix_score import CTCPrefixScore, CTCPrefixScoreTH
+from espnet_streaming_decoder.espnet.nets.scorers.ctc import CTCPrefixScorer
 
 
 class UASRPrefixScorer(CTCPrefixScorer):

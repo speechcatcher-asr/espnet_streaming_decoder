@@ -4,11 +4,11 @@ from typing import Dict, List, Optional, Tuple, Union
 import torch
 from packaging.version import parse as V
 
-from espnet2.enh.decoder.stft_decoder import STFTDecoder
-from espnet2.enh.encoder.stft_encoder import STFTEncoder
-from espnet2.enh.layers.beamformer import tik_reg, to_double
-from espnet2.enh.layers.tcndenseunet import TCNDenseUNet
-from espnet2.enh.separator.abs_separator import AbsSeparator
+from espnet_streaming_decoder.espnet2.enh.decoder.stft_decoder import STFTDecoder
+from espnet_streaming_decoder.espnet2.enh.encoder.stft_encoder import STFTEncoder
+from espnet_streaming_decoder.espnet2.enh.layers.beamformer import tik_reg, to_double
+from espnet_streaming_decoder.espnet2.enh.layers.tcndenseunet import TCNDenseUNet
+from espnet_streaming_decoder.espnet2.enh.separator.abs_separator import AbsSeparator
 
 is_torch_1_9_plus = V(torch.__version__) >= V("1.9.0")
 

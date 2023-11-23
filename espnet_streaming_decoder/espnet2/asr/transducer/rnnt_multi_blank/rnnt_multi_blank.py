@@ -31,8 +31,8 @@ import torch
 from torch.autograd import Function
 from torch.nn import Module
 
-from espnet2.asr.transducer.rnnt_multi_blank import rnnt
-from espnet2.asr.transducer.rnnt_multi_blank.utils.cpu_utils import cpu_rnnt
+from espnet_streaming_decoder.espnet2.asr.transducer.rnnt_multi_blank import rnnt
+from espnet_streaming_decoder.espnet2.asr.transducer.rnnt_multi_blank.utils.cpu_utils import cpu_rnnt
 
 __all__ = ["rnnt_loss", "RNNTLossNumba", "MultiblankRNNTLossNumba"]
 
