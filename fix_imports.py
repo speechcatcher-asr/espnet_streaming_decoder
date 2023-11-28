@@ -1,3 +1,6 @@
+# These two find+sed commands prepend "espnet_streaming_decoder" to imports of modules in either espnet or espnet2.
+# While all files in this repository are already patched this way, this could be very useful if you are updating files from espnet.
+
 import os
 import re
 
