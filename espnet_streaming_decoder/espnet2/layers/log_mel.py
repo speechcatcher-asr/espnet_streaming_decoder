@@ -1,6 +1,6 @@
 from typing import Tuple
 
-#import librosa
+import librosa
 import torch
 
 from espnet_streaming_decoder.espnet.nets.pytorch_backend.nets_utils import make_pad_mask
