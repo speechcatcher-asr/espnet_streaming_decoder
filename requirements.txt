@@ -17,3 +17,4 @@ soundfile>=0.10.2
 PyYAML>=5.1.2
 g2p-en
 jaconv
+pytorch-wpe
