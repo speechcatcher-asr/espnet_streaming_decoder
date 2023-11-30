@@ -178,9 +178,14 @@ class BatchBeamSearchOnline(BatchBeamSearch):
 
     def process_one_block(self, h, is_final, maxlen, maxlenratio):
         """Recognize one block."""
+
+        print("process_one_block called:", h, is_final, maxlen, maxlenratio)
+
         # extend states for ctc
         self.extend(h, self.running_hyps)
         while self.process_idx < maxlen:
+            print("position " + str(self.process_idx))
+            print("h.size()", h.size())
             logging.debug("position " + str(self.process_idx))
             best = self.search(self.running_hyps, h)
 
@@ -235,6 +240,10 @@ class BatchBeamSearchOnline(BatchBeamSearch):
             self.running_hyps = self.post_process(
                 self.process_idx, maxlen, maxlenratio, best, self.ended_hyps
             )
+
+            print("self.running_hyps yseq", self.running_hyps.yseq)
+            print("self.running_hyps xpos", self.running_hyps.xpos)
+            print("self.running_hyps length", self.running_hyps.length)
 
             if is_final:
                 for hyp in local_ended_hyps:

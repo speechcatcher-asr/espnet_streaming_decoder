@@ -16,6 +16,7 @@ class BatchHypothesis(NamedTuple):
     """Batchfied/Vectorized hypothesis data type."""
 
     yseq: torch.Tensor = torch.tensor([])  # (batch, maxlen)
+    xpos: torch.Tensor = torch.tensor([])  # (batch, maxlen)
     score: torch.Tensor = torch.tensor([])  # (batch,)
     length: torch.Tensor = torch.tensor([])  # (batch,)
     scores: Dict[str, torch.Tensor] = dict()  # values: (batch,)
@@ -37,6 +38,9 @@ class BatchBeamSearch(BeamSearch):
             yseq=pad_sequence(
                 [h.yseq for h in hyps], batch_first=True, padding_value=self.eos
             ),
+            xpos=pad_sequence(
+                [h.xpos for h in hyps], batch_first=True, padding_value=-1
+            ),
             length=torch.tensor([len(h.yseq) for h in hyps], dtype=torch.int64),
             score=torch.tensor([h.score for h in hyps]),
             scores={k: torch.tensor([h.scores[k] for h in hyps]) for k in self.scorers},
@@ -46,6 +50,7 @@ class BatchBeamSearch(BeamSearch):
     def _batch_select(self, hyps: BatchHypothesis, ids: List[int]) -> BatchHypothesis:
         return BatchHypothesis(
             yseq=hyps.yseq[ids],
+            xpos=hyps.xpos[ids],
             score=hyps.score[ids],
             length=hyps.length[ids],
             scores={k: v[ids] for k, v in hyps.scores.items()},
@@ -58,6 +63,7 @@ class BatchBeamSearch(BeamSearch):
     def _select(self, hyps: BatchHypothesis, i: int) -> Hypothesis:
         return Hypothesis(
             yseq=hyps.yseq[i, : hyps.length[i]],
+            xpos=hyps.xpos[i, : hyps.length[i]],
             score=hyps.score[i],
             scores={k: v[i] for k, v in hyps.scores.items()},
             states={
@@ -70,6 +76,7 @@ class BatchBeamSearch(BeamSearch):
         return [
             Hypothesis(
                 yseq=batch_hyps.yseq[i][: batch_hyps.length[i]],
+                xpos=batch_hyps.xpos[i][: batch_hyps.length[i]],
                 score=batch_hyps.score[i],
                 scores={k: batch_hyps.scores[k][i] for k in self.scorers},
                 states={
@@ -134,6 +141,7 @@ class BatchBeamSearch(BeamSearch):
                     score=0.0,
                     scores=init_scores,
                     states=init_states,
+                    xpos=torch.tensor([0], device=x.device),
                     yseq=torch.tensor(primer, device=x.device),
                 )
             ]
@@ -158,6 +166,9 @@ class BatchBeamSearch(BeamSearch):
         """
         scores = dict()
         states = dict()
+
+        print("score full:", hyp.yseq)
+
         for k, d in self.full_scorers.items():
             scores[k], states[k] = d.batch_score(hyp.yseq, hyp.states[k], x)
         return scores, states
@@ -227,6 +238,9 @@ class BatchBeamSearch(BeamSearch):
             n_batch, self.n_vocab, dtype=x.dtype, device=x.device
         )
         scores, states = self.score_full(running_hyps, x.expand(n_batch, *x.shape))
+        
+        print("scores, states in batch beam search:", len(scores), len(states))
+
         for k in self.full_scorers:
             weighted_scores += self.weights[k] * scores[k]
         # partial scoring
@@ -241,12 +255,17 @@ class BatchBeamSearch(BeamSearch):
         # full-size score matrices, which has non-zero scores for part_ids and zeros
         # for others.
         part_scores, part_states = self.score_partial(running_hyps, part_ids, x)
+        xpos_local = x.size()[0]
+        print("x, xpos, part_scores, part_states:", x.size(), xpos_local, len(part_scores), len(part_states))
+
         for k in self.part_scorers:
             weighted_scores += self.weights[k] * part_scores[k]
         # add previous hyp scores
         weighted_scores += running_hyps.score.to(
             dtype=x.dtype, device=x.device
         ).unsqueeze(1)
+
+        print("weighted_scores, part_ids:", weighted_scores.size(), part_ids.size())
 
         # TODO(karita): do not use list. use batch instead
         # see also https://github.com/espnet/espnet/pull/1402#discussion_r354561029
@@ -264,6 +283,7 @@ class BatchBeamSearch(BeamSearch):
                 Hypothesis(
                     score=weighted_scores[full_prev_hyp_id, full_new_token_id],
                     yseq=self.append_token(prev_hyp.yseq, full_new_token_id),
+                    xpos=self.append_token(prev_hyp.xpos, xpos_local),
                     scores=self.merge_scores(
                         prev_hyp.scores,
                         {k: v[full_prev_hyp_id] for k, v in scores.items()},

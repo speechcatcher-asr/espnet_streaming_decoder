@@ -14,6 +14,7 @@ class Hypothesis(NamedTuple):
     """Hypothesis data type."""
 
     yseq: torch.Tensor
+    xpos: torch.Tensor
     score: Union[float, torch.Tensor] = 0
     scores: Dict[str, Union[float, torch.Tensor]] = dict()
     states: Dict[str, Any] = dict()
@@ -22,6 +23,7 @@ class Hypothesis(NamedTuple):
         """Convert data to JSON-friendly dict."""
         return self._replace(
             yseq=self.yseq.tolist(),
+            xpos=self.xpos.tolist(),
             score=float(self.score),
             scores={k: float(v) for k, v in self.scores.items()},
         )._asdict()
@@ -325,6 +327,8 @@ class BeamSearch(torch.nn.Module):
 
             # update hyps
             for j, part_j in zip(*self.beam(weighted_scores, part_ids)):
+                print("j, part_j:", j, part_j)
+
                 # will be (2 x beam at most)
                 best_hyps.append(
                     Hypothesis(
@@ -377,6 +381,7 @@ class BeamSearch(torch.nn.Module):
         running_hyps = self.init_hyp(x)
         ended_hyps = []
         for i in range(maxlen):
+            print("beam:",i)
             logging.debug("position " + str(i))
             best = self.search(running_hyps, x)
             # post process of one iteration
