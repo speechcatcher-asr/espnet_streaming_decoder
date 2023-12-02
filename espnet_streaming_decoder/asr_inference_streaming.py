@@ -347,9 +347,10 @@ class Speech2TextStreaming:
             # remove sos/eos and get results
             token_int = hyp.yseq[1:-1].tolist()
 
+            token_pos = []
             # token positions
             if with_timings:
-                token_pos = [i for i,x in enumerate(token_int) if x != 0]
+                token_pos = hyp.xpos[1:-1].tolist()
 
             # remove blank symbol id, which is assumed to be 0
             token_int = list(filter(lambda x: x != 0, token_int))
