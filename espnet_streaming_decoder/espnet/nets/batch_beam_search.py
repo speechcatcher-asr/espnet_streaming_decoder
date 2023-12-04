@@ -167,7 +167,7 @@ class BatchBeamSearch(BeamSearch):
         scores = dict()
         states = dict()
 
-        print("score full:", hyp.yseq)
+        #print("score full:", hyp.yseq)
 
         for k, d in self.full_scorers.items():
             scores[k], states[k] = d.batch_score(hyp.yseq, hyp.states[k], x)
@@ -239,7 +239,7 @@ class BatchBeamSearch(BeamSearch):
         )
         scores, states = self.score_full(running_hyps, x.expand(n_batch, *x.shape))
         
-        print("scores, states in batch beam search:", len(scores), len(states))
+        #print("scores, states in batch beam search:", len(scores), len(states))
 
         for k in self.full_scorers:
             weighted_scores += self.weights[k] * scores[k]
@@ -256,7 +256,7 @@ class BatchBeamSearch(BeamSearch):
         # for others.
         part_scores, part_states = self.score_partial(running_hyps, part_ids, x)
         xpos_local = x.size()[0]
-        print("x, xpos, part_scores, part_states:", x.size(), xpos_local, len(part_scores), len(part_states))
+        #print("x, xpos, part_scores, part_states:", x.size(), xpos_local, len(part_scores), len(part_states))
 
         for k in self.part_scorers:
             weighted_scores += self.weights[k] * part_scores[k]
@@ -265,7 +265,7 @@ class BatchBeamSearch(BeamSearch):
             dtype=x.dtype, device=x.device
         ).unsqueeze(1)
 
-        print("weighted_scores, part_ids:", weighted_scores.size(), part_ids.size())
+        #print("weighted_scores, part_ids:", weighted_scores.size(), part_ids.size())
 
         # TODO(karita): do not use list. use batch instead
         # see also https://github.com/espnet/espnet/pull/1402#discussion_r354561029
