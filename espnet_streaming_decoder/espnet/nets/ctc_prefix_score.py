@@ -27,6 +27,9 @@ class CTCPrefixScoreTH(object):
         :param int eos: end-of-sequence id
         :param int margin: margin parameter for windowing (0 means no windowing)
         """
+
+        #print("CTCPrefixScoreTH init called")
+
         # In the comment lines,
         # we assume T: input_length, B: batch size, W: beam width, O: output dim.
         self.logzero = -10000000000.0
@@ -151,6 +154,8 @@ class CTCPrefixScoreTH(object):
             start = max(output_length, 1)
             end = self.input_length
 
+        #print("prefixCTC: start end:", start, end)
+
         # compute forward probabilities log(r_t^n(h)) and log(r_t^b(h))
         for t in range(start, end):
             rp = r[t - 1]
@@ -179,6 +184,8 @@ class CTCPrefixScoreTH(object):
 
         for si in range(n_bh):
             log_psi[si, self.eos] = r_sum[self.end_frames[si // n_hyps], si]
+
+        #print("log_psi:", log_psi.size())
 
         # exclude blank probs
         log_psi[:, self.blank] = self.logzero
