@@ -158,6 +158,7 @@ class BeamSearch(torch.nn.Module):
             torch.Tensor: New tensor contains: xs + [x] with xs.dtype and xs.device
 
         """
+
         x = torch.tensor([x], dtype=xs.dtype, device=xs.device)
         return torch.cat((xs, x))
 
@@ -327,7 +328,7 @@ class BeamSearch(torch.nn.Module):
 
             # update hyps
             for j, part_j in zip(*self.beam(weighted_scores, part_ids)):
-                print("j, part_j:", j, part_j)
+                #print("j, part_j:", j, part_j)
 
                 # will be (2 x beam at most)
                 best_hyps.append(
@@ -381,7 +382,7 @@ class BeamSearch(torch.nn.Module):
         running_hyps = self.init_hyp(x)
         ended_hyps = []
         for i in range(maxlen):
-            print("beam:",i)
+            #print("beam:",i)
             logging.debug("position " + str(i))
             best = self.search(running_hyps, x)
             # post process of one iteration
