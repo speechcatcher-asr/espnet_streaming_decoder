@@ -4,7 +4,7 @@ with open('requirements.txt') as f:
     requirements = f.read().splitlines()
 
 setup(
-    name='speechcatcher',
+    name='espnet-streaming-decoder',
     version='0.1',
     author='Shinji Watanabe, Benjamin Milde',
     author_email='bmilde@users.noreply.github.com',
