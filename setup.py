@@ -11,6 +11,7 @@ setup(
     description='Espnet streaming ASR decoder with smaller footprint and fewer requirements, extracted from "ESPnet: end-to-end speech processing toolkit"',
     url='https://github.com/speechcatcher-asr/espnet_streaming_decoder',
     packages=find_packages(),
+    package_data={"espnet_streaming_decoder.espnet": ["version.txt"]},
     install_requires=requirements,
     entry_points={
         'console_scripts': [
