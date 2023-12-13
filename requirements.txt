@@ -15,7 +15,5 @@ h5py>=2.10.0
 kaldiio
 soundfile>=0.10.2
 PyYAML>=5.1.2
-g2p-en
 jaconv
 pytorch-wpe
-jamo
