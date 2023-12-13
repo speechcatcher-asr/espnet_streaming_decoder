@@ -4,8 +4,10 @@ import warnings
 from pathlib import Path
 from typing import Iterable, List, Optional, Union
 
-import g2p_en
-import jamo
+# We disable g2p as it is not needed for Speechcatcher and sometimes it creates import problems
+#import g2p_en
+#import jamo
+
 from packaging.version import parse as V
 from typeguard import check_argument_types
 
