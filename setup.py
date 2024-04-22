@@ -5,7 +5,7 @@ with open('requirements.txt') as f:
 
 setup(
     name='espnet-streaming-decoder',
-    version='0.1',
+    version='0.1.1',
     author='Shinji Watanabe, Benjamin Milde',
     author_email='bmilde@users.noreply.github.com',
     description='Espnet streaming ASR decoder with smaller footprint and fewer requirements, extracted from "ESPnet: end-to-end speech processing toolkit"',
