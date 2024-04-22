@@ -8,6 +8,7 @@ import sys
 from pathlib import Path
 from typing import List, Optional, Sequence, Tuple, Union
 
+import traceback
 import numpy as np
 import torch
 from typeguard import check_argument_types, check_return_type
@@ -276,12 +277,19 @@ class Speech2TextStreaming:
                     - math.ceil(math.ceil(self.win_length / self.hop_length) / 2),
                 )
             else:
-                feats = feats.narrow(
-                    1,
-                    math.ceil(math.ceil(self.win_length / self.hop_length) / 2),
-                    feats.size(1)
-                    - 2 * math.ceil(math.ceil(self.win_length / self.hop_length) / 2),
-                )
+                try:
+                    feats = feats.narrow(
+                        1,
+                        math.ceil(math.ceil(self.win_length / self.hop_length) / 2),
+                        feats.size(1)
+                        - 2 * math.ceil(math.ceil(self.win_length / self.hop_length) / 2),
+                    )
+                except Exception as e:
+                    print("Error with feats:", feats)  # Print the problematic feats
+                    print("Error message:", str(e))  # Print the error message
+                    print("Feats length is:", feats_lengths)
+                    traceback.print_exc()  # Print the stack trace
+                    pass
 
         feats_lengths = feats.new_full([1], dtype=torch.long, fill_value=feats.size(1))
 
