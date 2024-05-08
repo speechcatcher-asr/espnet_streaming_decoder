@@ -6,7 +6,7 @@ typeguard==2.13.3
 einops
 hydra-core
 opt-einsum
-sentencepiece==0.1.99
+sentencepiece>=0.1.99
 ctc-segmentation>=1.6.6
 humanfriendly
 torch_complex
